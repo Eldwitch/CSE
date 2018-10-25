@@ -39,6 +39,7 @@ car_miles_per_gallon = 0.01  # Float
 
 print("I have a car called %s. It's pretty nice." % car_name)
 print("It has %d cylinders, but it gets %f mpg" % (car_cylinders, car_miles_per_gallon))
+print()
 
 # Taking Input
 name = input("What is your name? ")
@@ -47,3 +48,7 @@ print("Hello %s" % name)
 age = input("How old are you? ")
 print("%s? You belong in a museum!" % age)
 
+# Recasting
+real_age = int(input("How old are you again? "))
+hidden_age = real_age + 5
+print(hidden_age)
