@@ -1,6 +1,6 @@
 import random
 Words = ["bepis"]
-""", "singular", "bees", "screaming", "satan", "god", "hello",
+""""singular", "bees", "screaming", "satan", "god", "hello",
          "why", "nine", "zoink", "taste", "swivel", "egg", "thirsty", "fifteen",
          "joke", "scoobis", "demon", "ech", "store"""""
 Alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o",
