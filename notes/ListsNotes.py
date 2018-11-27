@@ -28,9 +28,12 @@ print()
 
 fears = ['Life', 'Disappointment', 'Jeff', 'Myself', 'The monster in my closet']
 
-fears[2] = 'Leroy'
+fears[2] = 'Humphrey'
 print(fears[2])
 print()
 
 for item2 in fears:
     print(item2)
+
+food_list = ["chicken", "chick", "gobbler", "boneless chicken", "bone-full chicken", "chicken nuggers",
+             "chicken tendies", "chicken strippers", ]
