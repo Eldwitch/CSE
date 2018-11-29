@@ -1,10 +1,8 @@
 import random
-Words = ["bepis"]
-""""singular", "bees", "screaming", "satan", "god", "hello",
+Words = ["bepis", "singular", "bees", "screaming", "satan", "god", "hello",
          "why", "nine", "zoink", "taste", "swivel", "egg", "thirsty", "fifteen",
-         "joke", "scoobis", "demon", "ech", "store"""""
-Alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o",
-            "p", "q", "r", "s", "t", "u", "v","w", "x", "y", "z"]
+         "joke", "scoobis", "demon", "ech", "store"]
+
 word = random.randint(0, 19)
 random_word = Words[word]
 print(random_word)
