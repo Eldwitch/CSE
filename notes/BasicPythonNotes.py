@@ -1,3 +1,4 @@
+"""
 print("Hello World!")
 
 # Apparently I'm going too slow, so I will speed up
@@ -52,7 +53,7 @@ print("%s? You belong in a museum!" % age)
 real_age = int(input("How old are you again? "))
 hidden_age = real_age + 5
 print(hidden_age)
-
+"""
 
 # Multi-line Comments
 
@@ -72,6 +73,8 @@ say_it()
 say_it()
 
 # f(x) = 2x + 3
+
+
 def f(x):
     print(2*x + 3)
 
@@ -147,3 +150,13 @@ print(3 != 4)
 a = 3 # A is set to 3
 a == 3 # Is A equal to 3?
 """
+
+# Function notes
+# a**2 + b**2 = c**2
+
+
+def pythagorean(a, b):
+    return (a**2 + b**2) ** (1/2)
+
+
+print(pythagorean(3, 4))
