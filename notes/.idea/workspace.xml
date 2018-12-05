@@ -12,10 +12,11 @@
     <SUITE FILE_PATH="coverage/notes$Everett_Garrison___Lucky_7s.coverage" NAME="Everett Garrison - Lucky 7s Coverage Results" MODIFIED="1542145915361" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/notes$ListsNotes.coverage" NAME="ListsNotes Coverage Results" MODIFIED="1543529816837" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/notes$Everett_Garrison___Guess_Game.coverage" NAME="Everett Garrison - Guess Game Coverage Results" MODIFIED="1541628310172" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv" />
-    <SUITE FILE_PATH="coverage/notes$Everett_Garrison___Python_Challenges.coverage" NAME="Everett Garrison - Python Challenges Coverage Results" MODIFIED="1543962230498" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/notes$Everett_Garrison___Python_Challenges.coverage" NAME="Everett Garrison - Python Challenges Coverage Results" MODIFIED="1544048744802" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/notes$Everett_Garrison___Hangman.coverage" NAME="Everett Garrison - Hangman Coverage Results" MODIFIED="1543269775436" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/notes$Everett_Garrison___Mad_Lib.coverage" NAME="Everett Garrison - Mad Lib Coverage Results" MODIFIED="1540936189413" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/notes$Everett_Garrison___Fix_it.coverage" NAME="Everett Garrison - Fix it Coverage Results" MODIFIED="1543874247865" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/notes$Fun.coverage" NAME="Fun Coverage Results" MODIFIED="1544049367863" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/notes$Everett_Garrison___Mad_Lib_Refactored_Edition.coverage" NAME="Everett Garrison - Mad Lib Refactored Edition Coverage Results" MODIFIED="1543443770406" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/notes$BasicPythonNotes.coverage" NAME="BasicPythonNotes Coverage Results" MODIFIED="1543875255872" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
@@ -42,29 +43,30 @@
           <entry key="project.open.time.76" value="1" />
           <entry key="project.open.time.77" value="1" />
           <entry key="project.open.time.81" value="2" />
+          <entry key="project.open.time.82" value="1" />
           <entry key="project.open.time.90" value="1" />
           <entry key="project.open.time.98" value="1" />
-          <entry key="project.opened" value="25" />
+          <entry key="project.opened" value="26" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="py" value="27" />
+          <entry key="py" value="28" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Python" value="27" />
+          <entry key="Python" value="28" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="8938" />
+          <entry key="py" value="9063" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="8938" />
+          <entry key="Python" value="9063" />
         </counts>
       </usages-collector>
     </session>
@@ -74,7 +76,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/BasicPythonNotes.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2249">
+            <state relative-caret-position="589">
               <caret line="31" column="12" selection-start-line="31" selection-start-column="12" selection-end-line="31" selection-end-column="12" />
               <folding>
                 <marker date="1543875826745" expanded="true" signature="1442:1447" ph="..." />
@@ -91,32 +93,45 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ListsNotes.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="36">
-              <caret line="93" column="12" lean-forward="true" selection-start-line="93" selection-start-column="12" selection-end-line="93" selection-end-column="12" />
+            <state relative-caret-position="1767">
+              <caret line="93" column="12" selection-start-line="93" selection-start-column="12" selection-end-line="93" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Everett Garrison - Python Challenges.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="429">
+              <caret line="89" column="17" selection-start-line="89" selection-start-column="17" selection-end-line="89" selection-end-column="17" />
+              <folding>
+                <marker date="1544047036928" expanded="true" signature="54:95" ph="..." />
+                <marker date="1544047036928" expanded="true" signature="153:253" ph="..." />
+                <marker date="1544047036928" expanded="true" signature="307:341" ph="..." />
+                <marker date="1544047036928" expanded="true" signature="392:397" ph="..." />
+                <marker date="1544047036928" expanded="true" signature="392:560" ph="..." />
+                <marker date="1544047036928" expanded="true" signature="651:691" ph="..." />
+                <marker date="1544047036928" expanded="true" signature="741:746" ph="..." />
+                <marker date="1544047036928" expanded="true" signature="741:787" ph="..." />
+                <marker date="1544047036928" expanded="true" signature="832:833" ph="..." />
+                <marker date="1544047036928" expanded="true" signature="832:856" ph="..." />
+                <marker date="1544047036928" expanded="true" signature="904:909" ph="..." />
+                <marker date="1544047036928" expanded="true" signature="904:1054" ph="..." />
+                <marker date="1544047036928" expanded="true" signature="1327:1328" ph="..." />
+                <marker date="1544047036928" expanded="true" signature="1327:1502" ph="..." />
+                <marker date="1544047036928" expanded="true" signature="1576:1595" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Everett Garrison - Python Challenges.py">
+        <entry file="file://$PROJECT_DIR$/Fun.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1598">
-              <caret line="86" lean-forward="true" selection-start-line="86" selection-end-line="86" />
+            <state relative-caret-position="19">
+              <caret line="1" column="25" lean-forward="true" selection-start-line="1" selection-start-column="25" selection-end-line="1" selection-end-column="25" />
               <folding>
-                <marker date="1543962230388" expanded="true" signature="54:95" ph="..." />
-                <marker date="1543962230388" expanded="true" signature="153:253" ph="..." />
-                <marker date="1543962230388" expanded="true" signature="307:341" ph="..." />
-                <marker date="1543962230388" expanded="true" signature="392:397" ph="..." />
-                <marker date="1543962230388" expanded="true" signature="392:560" ph="..." />
-                <marker date="1543962230388" expanded="true" signature="651:691" ph="..." />
-                <marker date="1543962230388" expanded="true" signature="741:746" ph="..." />
-                <marker date="1543962230388" expanded="true" signature="741:787" ph="..." />
-                <marker date="1543962230388" expanded="true" signature="832:833" ph="..." />
-                <marker date="1543962230388" expanded="true" signature="832:856" ph="..." />
-                <marker date="1543962230388" expanded="true" signature="904:909" ph="..." />
-                <marker date="1543962230388" expanded="true" signature="904:1054" ph="..." />
-                <marker date="1543962230388" expanded="true" signature="1327:1328" ph="..." />
-                <marker date="1543962230388" expanded="true" signature="1327:1502" ph="..." />
+                <marker date="1544049367754" expanded="true" signature="11:16" ph="..." />
               </folding>
             </state>
           </provider>
@@ -149,6 +164,7 @@
         <option value="$PROJECT_DIR$/Everett Garrison - Fix it.py" />
         <option value="$PROJECT_DIR$/BasicPythonNotes.py" />
         <option value="$PROJECT_DIR$/Everett Garrison - Python Challenges.py" />
+        <option value="$PROJECT_DIR$/Fun.py" />
       </list>
     </option>
   </component>
@@ -220,7 +236,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.Everett Garrison - Python Challenges">
+  <component name="RunManager" selected="Python.Fun">
     <configuration name="BasicPythonNotes" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="notes" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -265,28 +281,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Everett Garrison - Mad Lib Refactored Edition" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="notes" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Everett Garrison - Mad Lib Refactored Edition.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="Everett Garrison - Python Challenges" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="notes" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -301,6 +295,28 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Everett Garrison - Python Challenges.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Fun" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="notes" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Fun.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -333,18 +349,18 @@
     </configuration>
     <list>
       <item itemvalue="Python.ListsNotes" />
-      <item itemvalue="Python.Everett Garrison - Mad Lib Refactored Edition" />
       <item itemvalue="Python.Everett Garrison - Fix it" />
       <item itemvalue="Python.Everett Garrison - Python Challenges" />
       <item itemvalue="Python.BasicPythonNotes" />
+      <item itemvalue="Python.Fun" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.Fun" />
         <item itemvalue="Python.Everett Garrison - Python Challenges" />
         <item itemvalue="Python.BasicPythonNotes" />
         <item itemvalue="Python.Everett Garrison - Fix it" />
         <item itemvalue="Python.ListsNotes" />
-        <item itemvalue="Python.Everett Garrison - Mad Lib Refactored Edition" />
       </list>
     </recent_temporary>
   </component>
@@ -363,23 +379,24 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20726173" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21028744" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49924356" weight="0.3409836" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50075644" side_tool="true" weight="0.3409836" />
-      <window_info anchor="bottom" id="Terminal" order="11" />
-      <window_info anchor="bottom" id="Python Console" order="12" />
+      <window_info anchor="bottom" id="Debug" order="2" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="5" />
+      <window_info anchor="bottom" id="Docker" order="6" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50075644" side_tool="true" weight="0.3409836" />
+      <window_info anchor="bottom" id="Terminal" order="10" />
+      <window_info anchor="bottom" id="Python Console" order="11" />
+      <window_info active="true" anchor="bottom" id="Run" order="12" sideWeight="0.49924356" visible="true" weight="0.3409836" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -465,7 +482,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/BasicPythonNotes.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2249">
+        <state relative-caret-position="589">
           <caret line="31" column="12" selection-start-line="31" selection-start-column="12" selection-end-line="31" selection-end-column="12" />
           <folding>
             <marker date="1543875826745" expanded="true" signature="1442:1447" ph="..." />
@@ -480,30 +497,41 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ListsNotes.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="93" column="12" lean-forward="true" selection-start-line="93" selection-start-column="12" selection-end-line="93" selection-end-column="12" />
+        <state relative-caret-position="1767">
+          <caret line="93" column="12" selection-start-line="93" selection-start-column="12" selection-end-line="93" selection-end-column="12" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Everett Garrison - Python Challenges.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1598">
-          <caret line="86" lean-forward="true" selection-start-line="86" selection-end-line="86" />
+        <state relative-caret-position="429">
+          <caret line="89" column="17" selection-start-line="89" selection-start-column="17" selection-end-line="89" selection-end-column="17" />
           <folding>
-            <marker date="1543962230388" expanded="true" signature="54:95" ph="..." />
-            <marker date="1543962230388" expanded="true" signature="153:253" ph="..." />
-            <marker date="1543962230388" expanded="true" signature="307:341" ph="..." />
-            <marker date="1543962230388" expanded="true" signature="392:397" ph="..." />
-            <marker date="1543962230388" expanded="true" signature="392:560" ph="..." />
-            <marker date="1543962230388" expanded="true" signature="651:691" ph="..." />
-            <marker date="1543962230388" expanded="true" signature="741:746" ph="..." />
-            <marker date="1543962230388" expanded="true" signature="741:787" ph="..." />
-            <marker date="1543962230388" expanded="true" signature="832:833" ph="..." />
-            <marker date="1543962230388" expanded="true" signature="832:856" ph="..." />
-            <marker date="1543962230388" expanded="true" signature="904:909" ph="..." />
-            <marker date="1543962230388" expanded="true" signature="904:1054" ph="..." />
-            <marker date="1543962230388" expanded="true" signature="1327:1328" ph="..." />
-            <marker date="1543962230388" expanded="true" signature="1327:1502" ph="..." />
+            <marker date="1544047036928" expanded="true" signature="54:95" ph="..." />
+            <marker date="1544047036928" expanded="true" signature="153:253" ph="..." />
+            <marker date="1544047036928" expanded="true" signature="307:341" ph="..." />
+            <marker date="1544047036928" expanded="true" signature="392:397" ph="..." />
+            <marker date="1544047036928" expanded="true" signature="392:560" ph="..." />
+            <marker date="1544047036928" expanded="true" signature="651:691" ph="..." />
+            <marker date="1544047036928" expanded="true" signature="741:746" ph="..." />
+            <marker date="1544047036928" expanded="true" signature="741:787" ph="..." />
+            <marker date="1544047036928" expanded="true" signature="832:833" ph="..." />
+            <marker date="1544047036928" expanded="true" signature="832:856" ph="..." />
+            <marker date="1544047036928" expanded="true" signature="904:909" ph="..." />
+            <marker date="1544047036928" expanded="true" signature="904:1054" ph="..." />
+            <marker date="1544047036928" expanded="true" signature="1327:1328" ph="..." />
+            <marker date="1544047036928" expanded="true" signature="1327:1502" ph="..." />
+            <marker date="1544047036928" expanded="true" signature="1576:1595" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Fun.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="1" column="25" lean-forward="true" selection-start-line="1" selection-start-column="25" selection-end-line="1" selection-end-column="25" />
+          <folding>
+            <marker date="1544049367754" expanded="true" signature="11:16" ph="..." />
           </folding>
         </state>
       </provider>

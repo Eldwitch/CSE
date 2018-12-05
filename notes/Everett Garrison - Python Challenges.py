@@ -84,3 +84,7 @@ def challenge9(letter):
 
 print(challenge9("e"))
 print(challenge9("h"))
+
+
+def challenge10(string):
+    return string
