@@ -3,3 +3,4 @@ def fun(n):
 
 
 print(fun(6))
+
