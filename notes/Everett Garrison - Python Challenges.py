@@ -87,10 +87,11 @@ print(challenge9("h"))
 
 
 def challenge10(string):
-    if string == ("1", "2", "3", "4", "5", "6", "7", "8", "9", "0"):
-        return "String is numeric"
-    else:
-        return "String is not numeric"
+    try:
+        int(string)
+        return "String is numeric."
+    except ValueError:
+        return "String is not numeric."
 
 
 print(challenge10("a"))
