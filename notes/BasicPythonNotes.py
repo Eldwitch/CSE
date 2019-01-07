@@ -121,6 +121,7 @@ sunny = False
 if sunny:
     print("Go outside")
 
+
 def grade_calc(percentage):
     if percentage >= 90:
         return "A"
