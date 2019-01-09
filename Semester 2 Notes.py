@@ -12,5 +12,8 @@ print("%s?? REALLY??!?!?!?" % age)
 
 colors = ["blue", "magenta", "communism", "yellow", "brown"]
 colors.append("marxism")
-
 print(colors)
+colors.pop(0)
+print(colors)
+print(colors[1])
+print(len(colors))
