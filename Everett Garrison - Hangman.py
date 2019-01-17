@@ -3,7 +3,6 @@ import string
 Words = ["singular", "bees", "SCREAMING", "satan", "god", "hello",
          "why", "seven", "zoinks", "taste", "swivel", "egg", "thirsty", "thirteen",
          "joke", "demon", "store", "what..?", "communism", "Hello World", "Everett"]
-
 win = False
 word = random.choice(Words)
 word_list = list(word)
@@ -19,7 +18,7 @@ for i in range(len(word)):
 print("".join(word_list))
 
 while guess > 0 and not win:
-    guess1 = input("Guess: ")
+    guess1 = input("Guess a letter: ")
     print(guess)
     guessed_letters.append(guess1.lower())
     for i in range(len(word)):
