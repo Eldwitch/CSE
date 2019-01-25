@@ -19,7 +19,7 @@
     <session id="419499837">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="6" />
+          <entry key="project.closed" value="7" />
           <entry key="project.open.time.15" value="1" />
           <entry key="project.open.time.23" value="1" />
           <entry key="project.open.time.29" value="1" />
@@ -30,10 +30,11 @@
           <entry key="project.open.time.46" value="1" />
           <entry key="project.open.time.48" value="1" />
           <entry key="project.open.time.49" value="2" />
+          <entry key="project.open.time.52" value="1" />
           <entry key="project.open.time.66" value="1" />
           <entry key="project.open.time.72" value="1" />
           <entry key="project.open.time.78" value="1" />
-          <entry key="project.opened" value="14" />
+          <entry key="project.opened" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -327,7 +328,7 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49754903" visible="true" weight="0.29090908" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49754903" visible="true" weight="0.29545453" />
       <window_info id="Structure" order="1" sideWeight="0.502451" side_tool="true" weight="0.27121213" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
