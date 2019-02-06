@@ -69,12 +69,30 @@ world_map = {
     },
     'F7': {
         'NAME': "Forest clearing",
-        'DESCRIPTION': "There's a mutated rat you cannot fight yet here",
+        'DESCRIPTION': "There's a mutated rat you cannot fight yet here because the dev is STILL too lazy",
         'PATHS': {
-            'NORTH': "F1",
-            'EAST': "F5",
-            'SOUTH': "F3",
-            "WEST": "FSTART"
+            'NORTH': "F3",
+            'SOUTH': "F8"
+        }
+    },
+    'F8': {
+        'NAME': "Mutated rat den",
+        'DESCRIPTION': "A disgustingly polluted rat den, filled with multiple dead rats and barely alive rat babies."
+                       "\n In the center of the room there's a giant, bulging rat blob spewing more pollution and"
+                       "\n dying rat babies. You feel a strong urge to purge this beast from this world. Sadly, the"
+                       "\n fight system isn't implemented yet, so you are forced to move along in utter disgust.",
+        'PATHS': {
+            'NORTH': "F7",
+            'SOUTH': "F9"
+        }
+    },
+    'F9': {
+        'NAME': "Dead End #2: Electric Boogaloo",
+        'DESCRIPTION': "It's yet another dead end, or your first depending on what path you've taken now. You notice"
+                       "\n some weird armor of questionable origin, which is covered in the polluted goop the rat den"
+                       "\n behind you spews out.",
+        'PATHS': {
+            'NORTH': "F8"
         }
     }
 }
@@ -96,6 +114,6 @@ while playing:
             room_name = current_node["PATHS"][command]
             current_node = world_map[room_name]
         except KeyError:
-            print("I can't go that way.")
+            print("A giant hand comes from the sky and turns you away from this path before promptly disappearing.")
     else:
         print("Command not recognized.")
