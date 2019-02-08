@@ -94,7 +94,47 @@ world_map = {
         'PATHS': {
             'NORTH': "F8"
         }
-    }
+    },
+    'F10': {
+        'NAME': "Fairy forest clearing entrance",
+        'DESCRIPTION': "There's an ominous entrance to a more mystical, wondrous part of the forest, some tiny voices"
+                       "\n beckon you inward.",
+        'PATHS': {
+            'EAST': "F4",
+            "WEST": "F11"
+        }
+    },
+    'F11': {
+        'NAME': "Faerie forest clearing",
+        'DESCRIPTION': "There's a Faerie you cannot fight yet here because the dev is lazy",
+        'PATHS': {
+            'NORTH': "F12",
+            'EAST': "F10"
+        }
+    },
+    'F12': {
+        'NAME': "Faerie forest clearing",
+        'DESCRIPTION': "There's another Faerie you cannot fight yet here because the dev is still lazy",
+        'PATHS': {
+            'EAST': "F13",
+            'SOUTH': "F11"
+        }
+    },
+    'F13': {
+        'NAME': "Faerie forest clearing",
+        'DESCRIPTION': "There's yet another Faerie you cannot fight yet here because the dev is still too lazy",
+        'PATHS': {
+            'SOUTH': "FS",
+            "WEST": "F12"
+        }
+    },
+    'FS': {
+        'NAME': "Faerie sword clearing",
+        'DESCRIPTION': "After murdering several faeries you walk into an uncharacteristicaly ",
+        'PATHS': {
+            'NORTH': "F13"
+        }
+    },
 }
 
 # Other Variables
