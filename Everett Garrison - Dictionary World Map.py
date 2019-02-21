@@ -15,9 +15,9 @@ world_map = {
         'NAME': "Forest clearing",
         'DESCRIPTION': "There's a mutated rat you cannot fight yet here because the dev is lazy",
         'PATHS': {
-            'SOUTH': "FSTART",
             'NORTH': "F14",
             'EAST': "F2",
+            'SOUTH': "FSTART",
             "WEST": "F4"
         }
     },
@@ -106,7 +106,7 @@ world_map = {
     },
     'F11': {
         'NAME': "Faerie forest clearing",
-        'DESCRIPTION': "There's a Faerie you cannot fight yet here because the dev is lazy",
+        'DESCRIPTION': "There's a Faerie you cannot fight yet here because the dev is lazy.",
         'PATHS': {
             'NORTH': "F12",
             'EAST': "F10"
@@ -114,7 +114,7 @@ world_map = {
     },
     'F12': {
         'NAME': "Faerie forest clearing",
-        'DESCRIPTION': "There's another Faerie you cannot fight yet here because the dev is still lazy",
+        'DESCRIPTION': "There's another Faerie you cannot fight yet here because the dev is still too lazy.",
         'PATHS': {
             'EAST': "F13",
             'SOUTH': "F11"
