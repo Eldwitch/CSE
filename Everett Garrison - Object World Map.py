@@ -11,6 +11,7 @@ class Room(object):
         self.down = down
         self.enter = enter
         self.floor = floor
+        self.npc = []
 
 
 class Player(object):
@@ -36,6 +37,12 @@ class Player(object):
         """
         room_name = getattr(self.current_location, direction)
         return globals()[room_name]
+
+
+class Npc(object):
+    def __init__(self, name, dialogue="'I am speaking right now.'"):
+        self.name = name
+        self.dialogue = dialogue
 
 
 FSTART = Room("Forest Start", "The beginning of your journey, where it all begins. There's trees around you as far as"
@@ -102,16 +109,24 @@ TSTART = Room("The First Floor of a Very Tall Tower", "A Baby Giant slumbers on 
               None, None, None, None, 'T1', 'TB')
 TB = Room("The Tower Basement", "You can barely see in front of yourself because of how dark it is in here.", None,
           None, None, None, 'TSTART')
-T1 = Room("The second floor of the Very Tall Tower", "A Child Giant slumbers here too.")
+T1 = Room("The second floor of the Very Tall Tower", "A Child Giant slumbers here.", None, None, None, None, 'T2', 'T1')
+T2 = Room("The third floor of the Very Tall Tower", "A Teenage Giant slumbers here.", None, None, None, None, 'T3',
+          'T2')
+T3 = Room("The fourth floor of the Very Tall Tower", "An Adult Giant slumbers here.", None, None, None, None, 'T4',
+          'T3')
+T4 = Room("The second floor of the Very Tall Tower", "The Last Giant slumbers here, waking and killing it would make "
+                                                     "the entire race extinct forever.",
+          None, None, None, None, None, 'T3')
 
 player = Player(FSTART)
 
-directions = ['north', 'east', 'south', 'west', 'up', 'down']
+directions = ['north', 'east', 'south', 'west', 'up', 'down', 'enter']
 playing = True
 
 # Controller
 while playing:
     print(player.current_location.name)
+    print("-" * 20)
     print(player.current_location.description)
     print("-" * 20)
 
@@ -124,5 +139,6 @@ while playing:
             player.move(next_room)
         except KeyError:
             print("You're unable to go this way.")
+            print("-" * 20)
     else:
         print("Command not recognized.")
