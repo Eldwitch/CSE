@@ -45,6 +45,11 @@ class Npc(object):
         self.dialogue = dialogue
 
 
+class Item(object):
+    def __init__(self, name):
+        self.name = name
+
+
 FSTART = Room("Forest Start", "The beginning of your journey, where it all begins. There's trees around you as far as"
                               "\nthe eye can see, and right above you the trees open up to allow a ray of sunshine to"
                               "\nshine onto a pentagram you stand on.", 'F1', 'F2', 'F3', 'F4')

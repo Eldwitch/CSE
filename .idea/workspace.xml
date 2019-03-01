@@ -32,6 +32,7 @@
           <entry key="project.open.time.23" value="1" />
           <entry key="project.open.time.29" value="1" />
           <entry key="project.open.time.33" value="1" />
+          <entry key="project.open.time.34" value="1" />
           <entry key="project.open.time.35" value="1" />
           <entry key="project.open.time.36" value="1" />
           <entry key="project.open.time.37" value="2" />
@@ -52,55 +53,58 @@
           <entry key="project.open.time.72" value="1" />
           <entry key="project.open.time.73" value="1" />
           <entry key="project.open.time.78" value="1" />
-          <entry key="project.opened" value="34" />
+          <entry key="project.opened" value="35" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="15048" />
+          <entry key="py" value="15990" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="15048" />
+          <entry key="Python" value="15990" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="py" value="32" />
+          <entry key="py" value="33" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Python" value="32" />
+          <entry key="Python" value="33" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Inheritance.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
+            <state relative-caret-position="952">
+              <caret line="56" lean-forward="true" selection-start-line="56" selection-end-line="56" />
               <folding>
-                <marker date="1551393374145" expanded="true" signature="22:27" ph="..." />
-                <marker date="1551393374145" expanded="true" signature="99:104" ph="..." />
-                <marker date="1551393374145" expanded="true" signature="657:729" ph="..." />
+                <marker date="1551479364536" expanded="true" signature="22:27" ph="..." />
+                <marker date="1551479364536" expanded="true" signature="99:104" ph="..." />
+                <marker date="1551479364536" expanded="true" signature="657:941" ph="..." />
+                <marker date="1551479364536" expanded="true" signature="746:941" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Object Notes.py">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Everett Garrison - Items.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="25" column="54" selection-start-line="25" selection-start-column="54" selection-end-line="25" selection-end-column="54" />
+            <state relative-caret-position="405">
+              <caret line="29" column="118" selection-start-line="29" selection-start-column="118" selection-end-line="29" selection-end-column="118" />
               <folding>
-                <marker date="1550097440987" expanded="true" signature="45:472" ph="..." />
-                <marker date="1550097440987" expanded="true" signature="529:542" ph="..." />
+                <marker date="1551480341738" expanded="true" signature="96:101" ph="..." />
+                <marker date="1551480341738" expanded="true" signature="222:267" ph="..." />
+                <marker date="1551480341738" expanded="true" signature="350:454" ph="..." />
+                <marker date="1551480341738" expanded="true" signature="540:800" ph="..." />
               </folding>
             </state>
           </provider>
@@ -109,21 +113,13 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Everett Garrison - Object World Map.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="303">
-              <caret line="45" selection-start-line="45" selection-end-line="45" />
+            <state relative-caret-position="388">
+              <caret line="50" lean-forward="true" selection-start-line="50" selection-end-line="50" />
               <folding>
-                <marker date="1551306357575" expanded="true" signature="483:1412" ph="..." />
-                <marker date="1551306357575" expanded="true" signature="1282:1412" ph="..." />
+                <marker date="1551479364583" expanded="true" signature="483:1489" ph="..." />
+                <marker date="1551479364583" expanded="true" signature="1282:1489" ph="..." />
+                <marker date="1551479364583" expanded="true" signature="1487:1489" ph="..." />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/World Map OOP.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" selection-start-line="12" selection-end-line="12" />
             </state>
           </provider>
         </entry>
@@ -157,8 +153,9 @@
         <option value="$PROJECT_DIR$/Everett Garrison - Object.py" />
         <option value="$PROJECT_DIR$/World Map OOP.py" />
         <option value="$PROJECT_DIR$/Everett Garrison - Dictionary World Map.py" />
-        <option value="$PROJECT_DIR$/Everett Garrison - Object World Map.py" />
         <option value="$PROJECT_DIR$/Inheritance.py" />
+        <option value="$PROJECT_DIR$/Everett Garrison - Object World Map.py" />
+        <option value="$PROJECT_DIR$/Everett Garrison - Items.py" />
       </list>
     </option>
   </component>
@@ -179,7 +176,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -191,6 +187,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -462,24 +459,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/World Map OOP.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Everett Garrison - Object World Map.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="303">
-          <caret line="45" selection-start-line="45" selection-end-line="45" />
-          <folding>
-            <marker date="1551306357575" expanded="true" signature="483:1412" ph="..." />
-            <marker date="1551306357575" expanded="true" signature="1282:1412" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Object Notes.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
@@ -491,14 +470,47 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/World Map OOP.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Everett Garrison - Object World Map.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="388">
+          <caret line="50" lean-forward="true" selection-start-line="50" selection-end-line="50" />
+          <folding>
+            <marker date="1551479364583" expanded="true" signature="483:1489" ph="..." />
+            <marker date="1551479364583" expanded="true" signature="1282:1489" ph="..." />
+            <marker date="1551479364583" expanded="true" signature="1487:1489" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Inheritance.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
+        <state relative-caret-position="952">
+          <caret line="56" lean-forward="true" selection-start-line="56" selection-end-line="56" />
           <folding>
-            <marker date="1551393374145" expanded="true" signature="22:27" ph="..." />
-            <marker date="1551393374145" expanded="true" signature="99:104" ph="..." />
-            <marker date="1551393374145" expanded="true" signature="657:729" ph="..." />
+            <marker date="1551479364536" expanded="true" signature="22:27" ph="..." />
+            <marker date="1551479364536" expanded="true" signature="99:104" ph="..." />
+            <marker date="1551479364536" expanded="true" signature="657:941" ph="..." />
+            <marker date="1551479364536" expanded="true" signature="746:941" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Everett Garrison - Items.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="29" column="118" selection-start-line="29" selection-start-column="118" selection-end-line="29" selection-end-column="118" />
+          <folding>
+            <marker date="1551480341738" expanded="true" signature="96:101" ph="..." />
+            <marker date="1551480341738" expanded="true" signature="222:267" ph="..." />
+            <marker date="1551480341738" expanded="true" signature="350:454" ph="..." />
+            <marker date="1551480341738" expanded="true" signature="540:800" ph="..." />
           </folding>
         </state>
       </provider>
