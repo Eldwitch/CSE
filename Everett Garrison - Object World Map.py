@@ -19,8 +19,8 @@ class Player(object):
         self.health = 100
         self.inventory = []
         self.current_location = starting_location
-        self.weapon = None
-        self.armor = None
+        self.weapon = False  # Set to true when weapon is equipped
+        self.armor = False  # Set to true when armor is equipped
 
     def move(self, new_location):
         """This method moves a player to a new location
