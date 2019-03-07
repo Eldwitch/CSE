@@ -4,9 +4,10 @@ class Item(object):
 
 
 class Weapon(Item):
-    def __init__(self, name):
+    def __init__(self, name, id):
         super(Weapon, self).__init__(name)
         self.weapon_damage = 5
+        self.id = id
 
     def equip(self):
         print("You equip the weapon.")
@@ -19,8 +20,9 @@ class Weapon(Item):
 
 
 class Armor(Item):
-    def __init__(self, name):
+    def __init__(self, name, id):
         super(Armor, self).__init__(name)
+        self.id = id
         self.armor_defense = 5
 
     def equip(self):
@@ -31,8 +33,9 @@ class Armor(Item):
 
 
 class Consumable(Item):
-    def __init__(self, name):
+    def __init__(self, name, id):
         super(Consumable, self).__init__(name)
+        self.id = id
         self.type = 1  # Make multiple item types like keys, potions, etc.
 
     def consume(self):
@@ -45,7 +48,7 @@ class Gold(Item):
         self.gold_amount = 0
 
 
-class Makeshiftsword(Weapon):
+class Makeshiftsword(Weapon, 1):
     def __init__(self):
         super(Makeshiftsword, self).__init__("Makeshift sword")
 
@@ -53,7 +56,7 @@ class Makeshiftsword(Weapon):
         print("You equip the Makeshift Sword.")
 
 
-class Gianthand(Weapon):
+class Gianthand(Weapon, 2):
     def __init__(self):
         super(Gianthand, self).__init__("Giant's hand")
 
@@ -61,7 +64,7 @@ class Gianthand(Weapon):
         print("You equip the Giant's hand.")
 
 
-class Makeshiftarmor(Armor):
+class Makeshiftarmor(Armor, 1):
     def __init__(self):
         super(Makeshiftarmor, self).__init__("Makeshift armor")
 
@@ -69,7 +72,7 @@ class Makeshiftarmor(Armor):
         print("You put on the Makeshift armor.")
 
 
-class Giantskin(Armor):
+class Giantskin(Armor, 2):
     def __init__(self):
         super(Giantskin, self).__init__("Giant's skin")
 
@@ -77,7 +80,16 @@ class Giantskin(Armor):
         print("You put on the Giant's skin.")
 
 
-class Healthpotion(Consumable):
+class Giantsheart(Consumable, 1):
+    def __init__(self):
+        super(Giantsheart, self).__init__("Giant's heart")
+
+    def consume(self):
+        print("You savagely bite into the heart, devouring it with the ferocity of the beat it once belonged to.")
+        # Increase health by some amount
+
+
+class Healthpotion(Consumable, 2):
     def __init__(self):
         super(Healthpotion, self).__init__("Health potion")
 
@@ -85,7 +97,7 @@ class Healthpotion(Consumable):
         print("You drink the Health potion and restore ___ health.")
 
 
-class Cavekey(Consumable):
+class Cavekey(Consumable, 3):
     def __init__(self):
         super(Cavekey, self).__init__("Ominous Cave Key")
 
@@ -94,7 +106,7 @@ class Cavekey(Consumable):
               "cave's entrance. The key turns itself and opens the cave for you.")
 
 
-class Ironsword(Weapon):
+class Ironsword(Weapon, 3):
     def __init__(self):
         super(Ironsword, self).__init__("Iron sword")
 
@@ -102,7 +114,7 @@ class Ironsword(Weapon):
         print("You equip the Iron sword.")
 
 
-class Ironarmor(Armor):
+class Ironarmor(Armor, 3):
     def __init__(self):
         super(Ironarmor, self).__init__("Iron armor")
 
@@ -110,7 +122,7 @@ class Ironarmor(Armor):
         print("You put on the Iron armor.")
 
 
-class Cultistbrew(Consumable):
+class Cultistbrew(Consumable, 4):
     def __init__(self):
         super(Cultistbrew, self).__init__("Cultist's special brew")
 
@@ -119,7 +131,7 @@ class Cultistbrew(Consumable):
               " but your skin starts to feel frail, \nalmost like glass.")
 
 
-class Demonhorn(Weapon):
+class Demonhorn(Weapon, 4):
     def __init__(self):
         super(Demonhorn, self).__init__("Demon's horn")
 
@@ -130,7 +142,7 @@ class Demonhorn(Weapon):
         print("You stab forward with the pointy end of the Demon's horn.")
 
 
-class Demonskin(Armor):
+class Demonskin(Armor, 4):
     def __init__(self):
         super(Demonskin, self).__init__("Demon's skin")
 
@@ -138,7 +150,16 @@ class Demonskin(Armor):
         print("You put on the Demon's skin.")
 
 
-class Dynamite(Consumable):
+class Demonheart(Consumable, 5):
+    def __init__(self):
+        super(Demonheart, self).__init__("Demon's heart")
+
+    def consume(self):
+        print("You savagely rip and tear into the heart, devouring it with the ferocity of the beat it once belonged "
+              "to.")  # Increase health by some amount
+
+
+class Dynamite(Consumable, 6):
     def __init__(self):
         super(Dynamite, self).__init__("Situational Dynamite™")
 
