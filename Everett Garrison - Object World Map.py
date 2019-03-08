@@ -19,8 +19,8 @@ class Player(object):
         self.health = 100
         self.inventory = []
         self.current_location = starting_location
-        self.weapon = False  # Set to true when weapon is equipped
-        self.armor = False  # Set to true when armor is equipped
+        self.weapon = None
+        self.armor = None
 
     def move(self, new_location):
         """This method moves a player to a new location
@@ -38,6 +38,27 @@ class Player(object):
         room_name = getattr(self.current_location, direction)
         return globals()[room_name]
 
+    def equip(self, item):
+        if isinstance(item, Weapon):
+            self.weapon = item
+            item.equip()
+        elif isinstance(item, Armor):
+            self.armor = item
+            item.equip()
+
+    def unequip(self, item):
+        if isinstance(item, Weapon):
+            self.weapon = None
+            print("You put away your weapon.")
+        elif isinstance(item, Armor):
+            self.armor = None
+            print("You take off your armor.")
+
+    def use(self, item):
+        if isinstance(item, Consumable, type):
+            
+        item.consume()
+
 
 class Npc(object):
     def __init__(self, name, dialogue="'I am speaking right now.'"):
@@ -46,22 +67,16 @@ class Npc(object):
 
 
 class Item(object):
-    def __init__(self, name):
+    def __init__(self, name, itemid):
         self.name = name
+        self.itemID = itemid
 
 
 class Weapon(Item):
     def __init__(self, name, item_id):
-        super(Weapon, self).__init__(name)
+        super(Weapon, self).__init__(name, item_id)
         self.weapon_damage = 5
         self.id = item_id
-
-    def equip(self):
-        print("You equip the weapon.")
-
-    def unequip(self):
-        print("You unequip your weapon.")
-        self.Player.weapon = False
 
     def attack(self):
         print("You attack with the weapon.")
@@ -69,120 +84,110 @@ class Weapon(Item):
 
 class Armor(Item):
     def __init__(self, name, item_id):
-        super(Armor, self).__init__(name)
+        super(Armor, self).__init__(name, item_id)
         self.id = item_id
         self.armor_defense = 5
-
-    def equip(self):
-        print("You put on the armor.")
-
-    def unequip(self):
-        print("You take off your armor.")
-        self.Player.armor = False
 
 
 class Consumable(Item):
     def __init__(self, name, item_id):
-        super(Consumable, self).__init__(name)
+        super(Consumable, self).__init__(name, item_id)
         self.id = item_id
-        self.type = 1  # Make multiple item types like keys, potions, etc.
-
-    def consume(self):
-        print("You consume the item.")
+        self.type = 1  # Make multiple item types like keys, potions, etc. 1 = consumables, 2 = keys
 
 
 class Gold(Item):
     def __init__(self):
-        super(Gold, self).__init__("Gold")
+        super(Gold, self).__init__("Gold", None)
         self.gold_amount = 0
 
 
-class Makeshiftsword(Weapon, 1):
+class Makeshiftsword(Weapon):
     def __init__(self):
-        super(Makeshiftsword, self).__init__("Makeshift sword")
+        super(Makeshiftsword, self).__init__("Makeshift sword", 1)
 
     def equip(self):
         print("You equip the Makeshift Sword.")
 
 
-class Gianthand(Weapon, 2):
+class Gianthand(Weapon):
     def __init__(self):
-        super(Gianthand, self).__init__("Giant's hand")
+        super(Gianthand, self).__init__("Giant's hand", 2)
 
     def equip(self):
         print("You equip the Giant's hand.")
 
 
-class Makeshiftarmor(Armor, 1):
+class Makeshiftarmor(Armor):
     def __init__(self):
-        super(Makeshiftarmor, self).__init__("Makeshift armor")
+        super(Makeshiftarmor, self).__init__("Makeshift armor", 1)
 
     def equip(self):
         print("You put on the Makeshift armor.")
 
 
-class Giantskin(Armor, 2):
+class Giantskin(Armor):
     def __init__(self):
-        super(Giantskin, self).__init__("Giant's skin")
+        super(Giantskin, self).__init__("Giant's skin", 2)
 
     def equip(self):
         print("You put on the Giant's skin.")
 
 
-class Giantsheart(Consumable, 1):
+class Giantsheart(Consumable):
     def __init__(self):
-        super(Giantsheart, self).__init__("Giant's heart")
+        super(Giantsheart, self).__init__("Giant's heart", 1)
 
     def consume(self):
         print("You savagely bite into the heart, devouring it with the ferocity of the beat it once belonged to.")
         # Increase health by some amount
 
 
-class Healthpotion(Consumable, 2):
+class Healthpotion(Consumable):
     def __init__(self):
-        super(Healthpotion, self).__init__("Health potion")
+        super(Healthpotion, self).__init__("Health potion", 2)
 
     def consume(self):
         print("You drink the Health potion and restore ___ health.")
 
 
-class Cavekey(Consumable, 3):
+class Cavekey(Consumable):
     def __init__(self):
-        super(Cavekey, self).__init__("Ominous Cave Key")
+        super(Cavekey, self).__init__("Ominous Cave Key", 3)
 
     def consume(self):
         print("You think really hard about using the key and it flies out of your hand and into the lock on the "
               "cave's entrance. The key turns itself and opens the cave for you.")
 
 
-class Ironsword(Weapon, 3):
+class Ironsword(Weapon):
     def __init__(self):
-        super(Ironsword, self).__init__("Iron sword")
+        super(Ironsword, self).__init__("Iron sword", 3)
 
     def equip(self):
         print("You equip the Iron sword.")
 
 
-class Ironarmor(Armor, 3):
+class Ironarmor(Armor):
     def __init__(self):
-        super(Ironarmor, self).__init__("Iron armor")
+        super(Ironarmor, self).__init__("Iron armor", 3)
 
     def equip(self):
         print("You put on the Iron armor.")
 
 
-class Cultistbrew(Consumable, 4):
+class Cultistbrew(Consumable):
     def __init__(self):
-        super(Cultistbrew, self).__init__("Cultist's special brew")
+        super(Cultistbrew, self).__init__("Cultist's special brew", 4)
 
     def consume(self):
         print("You pop the cork off of the bottle and chug the whole thing down in one go. You suddenly feel stronger,"
               " but your skin starts to feel frail, \nalmost like glass.")
 
 
-class Demonhorn(Weapon, 4):
+class Demonhorn(Weapon):
     def __init__(self):
-        super(Demonhorn, self).__init__("Demon's horn")
+        super(Demonhorn, self).__init__("Demon's horn", 4)
 
     def equip(self):
         print("You equip the Demon's horn.")
@@ -191,32 +196,35 @@ class Demonhorn(Weapon, 4):
         print("You stab forward with the pointy end of the Demon's horn.")
 
 
-class Demonskin(Armor, 4):
+class Demonskin(Armor):
     def __init__(self):
-        super(Demonskin, self).__init__("Demon's skin")
+        super(Demonskin, self).__init__("Demon's skin", 4)
 
     def equip(self):
         print("You put on the Demon's skin.")
 
 
-class Demonheart(Consumable, 5):
+class Demonheart(Consumable):
     def __init__(self):
-        super(Demonheart, self).__init__("Demon's heart")
+        super(Demonheart, self).__init__("Demon's heart", 5)
 
     def consume(self):
         print("You savagely rip and tear into the heart, devouring it with the ferocity of the beat it once belonged "
               "to.")  # Increase health by some amount
 
 
-class Dynamite(Consumable, 6):
+class Dynamite(Consumable):
     def __init__(self):
-        super(Dynamite, self).__init__("Situational Dynamite™")
+        super(Dynamite, self).__init__("Situational Dynamite™", 6)
 
     def consume(self):
         print("You light the fuse on the dynamite and it flies out of your hand and slams into the roof at the top of "
               "\nthe Ominous Cave, causing it to explode and expose a rope that leads skywards.")
 
 
+# Item instantiation
+
+# Room instantiation
 FSTART = Room("Forest Start", "The beginning of your journey, where it all begins. There's trees around you as far as"
                               "\nthe eye can see, and right above you the trees open up to allow a ray of sunshine to"
                               "\nshine onto a pentagram you stand on.", 'F1', 'F2', 'F3', 'F4')
