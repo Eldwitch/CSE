@@ -1,6 +1,4 @@
-def fun(n):
-    return n+n**n+n**n**n
-
-
-print(fun(6))
-
+str1 = "equip sword"
+print(str1[1:5])
+print(str1[1:])
+print(str1[6:])

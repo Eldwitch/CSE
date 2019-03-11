@@ -15,7 +15,6 @@ class Weapon(Item):
 
     def unequip(self):
         print("You unequip your weapon.")
-        self.Player.weapon = False
 
     def attack(self):
         print("You attack with the weapon.")
@@ -32,7 +31,6 @@ class Armor(Item):
 
     def unequip(self):
         print("You take off your armor.")
-        self.Player.armor = False
 
 
 class Consumable(Item):
@@ -158,7 +156,7 @@ class Demonheart(Consumable):
         super(Demonheart, self).__init__("Demon's heart", 5)
 
     def consume(self):
-        print("You savagely rip and tear into the heart, devouring it with the ferocity of the beat it once belonged "
+        print("You savagely rip and tear into the heart, devouring it with the ferocity of the beast it once belonged "
               "to.")  # Increase health by some amount
 
 
@@ -169,3 +167,19 @@ class Dynamite(Consumable):
     def consume(self):
         print("You light the fuse on the dynamite and it flies out of your hand and slams into the roof at the top of "
               "\nthe Ominous Cave, causing it to explode and expose a rope that leads skywards.")
+
+
+makeshiftsword = Makeshiftsword()
+makeshiftarmor = Makeshiftarmor()
+gianthand = Gianthand()
+giantskin = Giantskin()
+giantsheart = Giantsheart()
+healthpotion = Healthpotion()
+cavekey = Cavekey()
+ironsword = Ironarmor()
+ironarmor = Ironarmor()
+cultistbrew = Cultistbrew()
+demonhorn = Demonhorn()
+demonskin = Demonskin()
+demonheart = Demonheart()
+dynamite = Dynamite()

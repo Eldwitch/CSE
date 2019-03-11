@@ -14,50 +14,6 @@ class Room(object):
         self.npc = []
 
 
-class Player(object):
-    def __init__(self, starting_location):
-        self.health = 100
-        self.inventory = []
-        self.current_location = starting_location
-        self.weapon = None
-        self.armor = None
-
-    def move(self, new_location):
-        """This method moves a player to a new location
-
-        :param new_location: The room object that we move to
-        """
-        self.current_location = new_location
-
-    def find_room(self, direction):
-        """This method takes a direction, and find the variable of the room.
-
-        :param direction: A String (all lowercase), with a cardinal direction
-        :return: A room object if it exists, None if it does not
-        """
-        room_name = getattr(self.current_location, direction)
-        return globals()[room_name]
-
-    def equip(self, item):
-        if isinstance(item, Weapon):
-            self.weapon = item
-            item.equip()
-        elif isinstance(item, Armor):
-            self.armor = item
-            item.equip()
-
-    def unequip(self, item):
-        if isinstance(item, Weapon):
-            self.weapon = None
-            print("You put away your weapon.")
-        elif isinstance(item, Armor):
-            self.armor = None
-            print("You take off your armor.")
-
-    def use(self, item):
-        if isinstance(item, Consumable, type):
-            
-        item.consume()
 
 
 class Npc(object):
@@ -222,6 +178,57 @@ class Dynamite(Consumable):
               "\nthe Ominous Cave, causing it to explode and expose a rope that leads skywards.")
 
 
+class Player(object):
+    def __init__(self, starting_location):
+        self.health = 100
+        self.inventory = [Ironsword()]
+        self.current_location = starting_location
+        self.weapon = None
+        self.armor = None
+
+    def move(self, new_location):
+        """This method moves a player to a new location
+
+        :param new_location: The room object that we move to
+        """
+        self.current_location = new_location
+
+    def find_room(self, direction):
+        """This method takes a direction, and find the variable of the room.
+
+        :param direction: A String (all lowercase), with a cardinal direction
+        :return: A room object if it exists, None if it does not
+        """
+        room_name = getattr(self.current_location, direction)
+        return globals()[room_name]
+
+    def equip(self, item):
+        if isinstance(item, Weapon):
+            self.weapon = item
+            item.equip()
+        elif isinstance(item, Armor):
+            self.armor = item
+            item.equip()
+
+    def unequip(self, item):
+        if isinstance(item, Weapon):
+            self.weapon = None
+            print("You put away your weapon.")
+        elif isinstance(item, Armor):
+            self.armor = None
+            print("You take off your armor.")
+
+    def use(self, item):
+        if isinstance(item, Consumable, type):
+            item.consume()
+
+    def find_item(self, item_name):
+        for item in self.inventory:
+            if item.name == item_name:
+                return True
+        return False
+
+
 # Item instantiation
 
 # Room instantiation
@@ -302,6 +309,7 @@ T4 = Room("The second floor of the Very Tall Tower", "The Last Giant slumbers he
 player = Player(FSTART)
 
 directions = ['north', 'east', 'south', 'west', 'up', 'down', 'enter']
+commands = ['equip', 'unequip', 'attack', 'use']
 playing = True
 
 # Controller
@@ -321,5 +329,13 @@ while playing:
         except KeyError:
             print("You're unable to go this way.")
             print("-" * 20)
+    elif 'equip' in command:
+        item_name_to_equip = command[6:]
+
+        # See if we have the item in the inventory
+        if player.find_item(item_name_to_equip):
+            print("You equip the %s" % item_name_to_equip)
+        else:
+            print("YOu dont have one")
     else:
         print("Command not recognized.")
