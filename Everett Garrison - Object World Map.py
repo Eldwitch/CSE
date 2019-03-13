@@ -14,53 +14,41 @@ class Room(object):
         self.npc = []
 
 
-
-
-class Npc(object):
-    def __init__(self, name, dialogue="'I am speaking right now.'"):
-        self.name = name
-        self.dialogue = dialogue
-
-
 class Item(object):
-    def __init__(self, name, itemid):
+    def __init__(self, name):
         self.name = name
-        self.itemID = itemid
 
 
 class Weapon(Item):
-    def __init__(self, name, item_id):
-        super(Weapon, self).__init__(name, item_id)
-        self.weapon_damage = 5
-        self.id = item_id
+    def __init__(self, name, damage):
+        super(Weapon, self).__init__(name)
+        self.weapon_damage = damage
 
     def attack(self):
         print("You attack with the weapon.")
 
 
 class Armor(Item):
-    def __init__(self, name, item_id):
-        super(Armor, self).__init__(name, item_id)
-        self.id = item_id
-        self.armor_defense = 5
+    def __init__(self, name, armor_amt):
+        super(Armor, self).__init__(name)
+        self.armor_amt = armor_amt
 
 
 class Consumable(Item):
-    def __init__(self, name, item_id):
-        super(Consumable, self).__init__(name, item_id)
-        self.id = item_id
+    def __init__(self, name):
+        super(Consumable, self).__init__(name)
         self.type = 1  # Make multiple item types like keys, potions, etc. 1 = consumables, 2 = keys
 
 
 class Gold(Item):
     def __init__(self):
-        super(Gold, self).__init__("Gold", None)
+        super(Gold, self).__init__("Gold")
         self.gold_amount = 0
 
 
 class Makeshiftsword(Weapon):
     def __init__(self):
-        super(Makeshiftsword, self).__init__("Makeshift sword", 1)
+        super(Makeshiftsword, self).__init__("Makeshift sword", 5)
 
     def equip(self):
         print("You equip the Makeshift Sword.")
@@ -68,7 +56,7 @@ class Makeshiftsword(Weapon):
 
 class Gianthand(Weapon):
     def __init__(self):
-        super(Gianthand, self).__init__("Giant's hand", 2)
+        super(Gianthand, self).__init__("Giant's hand", 10)
 
     def equip(self):
         print("You equip the Giant's hand.")
@@ -76,7 +64,7 @@ class Gianthand(Weapon):
 
 class Makeshiftarmor(Armor):
     def __init__(self):
-        super(Makeshiftarmor, self).__init__("Makeshift armor", 1)
+        super(Makeshiftarmor, self).__init__("Makeshift armor", 5)
 
     def equip(self):
         print("You put on the Makeshift armor.")
@@ -84,7 +72,7 @@ class Makeshiftarmor(Armor):
 
 class Giantskin(Armor):
     def __init__(self):
-        super(Giantskin, self).__init__("Giant's skin", 2)
+        super(Giantskin, self).__init__("Giant's skin", 10)
 
     def equip(self):
         print("You put on the Giant's skin.")
@@ -92,7 +80,7 @@ class Giantskin(Armor):
 
 class Giantsheart(Consumable):
     def __init__(self):
-        super(Giantsheart, self).__init__("Giant's heart", 1)
+        super(Giantsheart, self).__init__("Giant's heart")
 
     def consume(self):
         print("You savagely bite into the heart, devouring it with the ferocity of the beat it once belonged to.")
@@ -101,7 +89,7 @@ class Giantsheart(Consumable):
 
 class Healthpotion(Consumable):
     def __init__(self):
-        super(Healthpotion, self).__init__("Health potion", 2)
+        super(Healthpotion, self).__init__("Health potion")
 
     def consume(self):
         print("You drink the Health potion and restore ___ health.")
@@ -109,7 +97,7 @@ class Healthpotion(Consumable):
 
 class Cavekey(Consumable):
     def __init__(self):
-        super(Cavekey, self).__init__("Ominous Cave Key", 3)
+        super(Cavekey, self).__init__("Ominous Cave Key")
 
     def consume(self):
         print("You think really hard about using the key and it flies out of your hand and into the lock on the "
@@ -118,7 +106,7 @@ class Cavekey(Consumable):
 
 class Ironsword(Weapon):
     def __init__(self):
-        super(Ironsword, self).__init__("Iron sword", 3)
+        super(Ironsword, self).__init__("Iron sword", 15)
 
     def equip(self):
         print("You equip the Iron sword.")
@@ -126,7 +114,7 @@ class Ironsword(Weapon):
 
 class Ironarmor(Armor):
     def __init__(self):
-        super(Ironarmor, self).__init__("Iron armor", 3)
+        super(Ironarmor, self).__init__("Iron armor", 15)
 
     def equip(self):
         print("You put on the Iron armor.")
@@ -134,7 +122,7 @@ class Ironarmor(Armor):
 
 class Cultistbrew(Consumable):
     def __init__(self):
-        super(Cultistbrew, self).__init__("Cultist's special brew", 4)
+        super(Cultistbrew, self).__init__("Cultist's special brew")
 
     def consume(self):
         print("You pop the cork off of the bottle and chug the whole thing down in one go. You suddenly feel stronger,"
@@ -143,7 +131,7 @@ class Cultistbrew(Consumable):
 
 class Demonhorn(Weapon):
     def __init__(self):
-        super(Demonhorn, self).__init__("Demon's horn", 4)
+        super(Demonhorn, self).__init__("Demon's horn", 20)
 
     def equip(self):
         print("You equip the Demon's horn.")
@@ -154,7 +142,7 @@ class Demonhorn(Weapon):
 
 class Demonskin(Armor):
     def __init__(self):
-        super(Demonskin, self).__init__("Demon's skin", 4)
+        super(Demonskin, self).__init__("Demon's skin", 20)
 
     def equip(self):
         print("You put on the Demon's skin.")
@@ -162,26 +150,62 @@ class Demonskin(Armor):
 
 class Demonheart(Consumable):
     def __init__(self):
-        super(Demonheart, self).__init__("Demon's heart", 5)
+        super(Demonheart, self).__init__("Demon's heart")
 
     def consume(self):
-        print("You savagely rip and tear into the heart, devouring it with the ferocity of the beat it once belonged "
+        print("You savagely rip and tear into the heart, devouring it with the ferocity of the beast it once belonged "
               "to.")  # Increase health by some amount
 
 
 class Dynamite(Consumable):
     def __init__(self):
-        super(Dynamite, self).__init__("Situational Dynamite™", 6)
+        super(Dynamite, self).__init__("Situational Dynamite™")
 
     def consume(self):
         print("You light the fuse on the dynamite and it flies out of your hand and slams into the roof at the top of "
               "\nthe Ominous Cave, causing it to explode and expose a rope that leads skywards.")
 
 
+class Character(object):
+    def __init__(self, name, health, weapon, armor):
+        self.name = name
+        self.health = health
+        self.weapon = weapon
+        self.armor = armor
+
+    def take_damage(self, damage):
+        if damage < self.armor.armor_amt:
+            print("No damage is inflicted.")
+        else:
+            self.health -= damage - self.armor.armor_amt
+            if self.health < 0:
+                self.health = 0
+                print("%s has freaking died. F." % self.name)
+        print("%s has %d health left." % (self.name, self.health))
+
+    def attack(self, target):
+        print("%s attack %s for %d damage." % (self.name, target.name, self.weapon.damage))
+        target.take_damage(self.weapon.damage)
+
+
+# Items
+sword = Weapon("Sword", None, 10)
+canoe = Weapon("Canoe", None, 84)
+wiebe_armor = Weapon("Armor of the gods", None, 1000000000000000000000000000)
+
+# Characters
+orc = Character("Orc", 100, sword, Armor("Generic Armor", None, 2))
+wiebe = Character("Wiebe", 10000000000, canoe, wiebe_armor)
+
+
+orc.attack(wiebe)
+wiebe.attack(orc)
+
+
 class Player(object):
     def __init__(self, starting_location):
         self.health = 100
-        self.inventory = [Ironsword()]
+        self.inventory = [Makeshiftsword, Makeshiftarmor]
         self.current_location = starting_location
         self.weapon = None
         self.armor = None
@@ -219,7 +243,7 @@ class Player(object):
             print("You take off your armor.")
 
     def use(self, item):
-        if isinstance(item, Consumable, type):
+        if isinstance(item, Consumable):
             item.consume()
 
     def find_item(self, item_name):
@@ -309,7 +333,6 @@ T4 = Room("The second floor of the Very Tall Tower", "The Last Giant slumbers he
 player = Player(FSTART)
 
 directions = ['north', 'east', 'south', 'west', 'up', 'down', 'enter']
-commands = ['equip', 'unequip', 'attack', 'use']
 playing = True
 
 # Controller
@@ -322,20 +345,29 @@ while playing:
     command = input(">_")
     if command.lower() in ('q', 'quit', 'exit'):
         playing = False
-    elif command in directions:
+    elif command.lower() in directions:
         try:
             next_room = player.find_room(command)
             player.move(next_room)
         except KeyError:
             print("You're unable to go this way.")
             print("-" * 20)
-    elif 'equip' in command:
+    elif 'equip' in command.lower():
         item_name_to_equip = command[6:]
 
         # See if we have the item in the inventory
-        if player.find_item(item_name_to_equip):
-            print("You equip the %s" % item_name_to_equip)
-        else:
-            print("YOu dont have one")
+        try:
+            if player.find_item(item_name_to_equip):
+                print("You equip the %s" % item_name_to_equip)
+        except KeyError:
+            print("You don't have one.")
+    elif 'use' in command.lower():
+        item_to_use = command[4:]
+
+        if player.find_item(item_to_use):
+            try:
+                player.use(item_to_use)
+            except KeyError:
+                print("You don't have this item.")
     else:
         print("Command not recognized.")
