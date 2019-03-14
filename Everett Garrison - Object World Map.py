@@ -178,23 +178,24 @@ class Character(object):
             print("No damage is inflicted.")
         else:
             self.health -= damage - self.armor.armor_amt
+            print("%s takes %d damage" % (self.name, damage - self.armor.armor_amt))
             if self.health < 0:
                 self.health = 0
                 print("%s has freaking died. F." % self.name)
         print("%s has %d health left." % (self.name, self.health))
 
     def attack(self, target):
-        print("%s attack %s for %d damage." % (self.name, target.name, self.weapon.damage))
-        target.take_damage(self.weapon.damage)
+        print("%s attack %s." % (self.name, target.name))
+        target.take_damage(self.weapon.weapon_damage)
 
 
 # Items
-sword = Weapon("Sword", None, 10)
-canoe = Weapon("Canoe", None, 84)
-wiebe_armor = Weapon("Armor of the gods", None, 1000000000000000000000000000)
+sword = Weapon("Sword", 10)
+canoe = Weapon("Canoe", 84)
+wiebe_armor = Armor("Armor of the gods", 1000000000000000000000000000)
 
 # Characters
-orc = Character("Orc", 100, sword, Armor("Generic Armor", None, 2))
+orc = Character("Orc", 100, sword, Armor("Generic Armor", 2))
 wiebe = Character("Wiebe", 10000000000, canoe, wiebe_armor)
 
 
