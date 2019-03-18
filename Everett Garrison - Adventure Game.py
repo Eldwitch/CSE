@@ -189,20 +189,6 @@ class Character(object):
         target.take_damage(self.weapon.weapon_damage)
 
 
-# Items
-sword = Weapon("Sword", 10)
-canoe = Weapon("Canoe", 84)
-wiebe_armor = Armor("Armor of the gods", 1000000000000000000000000000)
-
-# Characters
-orc = Character("Orc", 100, sword, Armor("Generic Armor", 2))
-wiebe = Character("Wiebe", 10000000000, canoe, wiebe_armor)
-
-
-orc.attack(wiebe)
-wiebe.attack(orc)
-
-
 class Player(object):
     def __init__(self, starting_location):
         self.health = 100
@@ -253,6 +239,20 @@ class Player(object):
             if item.name == item_name:
                 return True
         return False
+
+
+# Items
+sword = Weapon("Sword", 10)
+canoe = Weapon("Canoe", 84)
+wiebe_armor = Armor("Armor of the gods", 1000000000000000000000000000)
+
+# Characters
+orc = Character("Orc", 100, sword, Armor("Generic Armor", 2))
+wiebe = Character("Wiebe", 10000000000, canoe, wiebe_armor)
+
+
+orc.attack(wiebe)
+wiebe.attack(orc)
 
 
 # Room instantiation
