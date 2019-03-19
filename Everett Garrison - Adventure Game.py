@@ -1,6 +1,8 @@
 class Room(object):
     def __init__(self, name, description, north=None, east=None, south=None, west=None, up=None, down=None, enter=None,
-                 floor=None):
+                 items=None):
+        if items is not None:
+            items = []
         self.name = name
         self.description = description
         self.north = north
@@ -10,8 +12,7 @@ class Room(object):
         self.up = up
         self.down = down
         self.enter = enter
-        self.floor = floor
-        self.npc = []
+        self.characters = []
 
 
 class Item(object):
@@ -192,7 +193,7 @@ class Character(object):
 class Player(object):
     def __init__(self, starting_location):
         self.health = 100
-        self.inventory = [Makeshiftsword, Makeshiftarmor]
+        self.inventory = [Makeshiftsword(), Makeshiftarmor(), Cavekey()]
         self.current_location = starting_location
         self.weapon = None
         self.armor = None
@@ -230,8 +231,9 @@ class Player(object):
             print("You take off your armor.")
 
     def use(self, item):
-        if isinstance(item, Consumable):
-            self.consumable = Item
+        print("Test")
+        if type(item) is Consumable:
+            print("Test2")
             item.consume()
 
     def find_item(self, item_name):
@@ -258,7 +260,8 @@ wiebe.attack(orc)
 # Room instantiation
 FSTART = Room("Forest Start", "The beginning of your journey, where it all begins. There's trees around you as far as"
                               "\nthe eye can see, and right above you the trees open up to allow a ray of sunshine to"
-                              "\nshine onto a pentagram you stand on.", 'F1', 'F2', 'F3', 'F4')
+                              "\nshine onto a pentagram that you are standing on.", 'F1', 'F2', 'F3', 'F4', None, None,
+              None)
 F1 = Room("Forest Clearing", "There's a mutated rat you cannot fight yet here because the dev is lazy.", 'F14', 'F2',
           'FSTART', 'F4')
 F2 = Room("Forest Clearing", "There's a mutated rat you cannot fight yet here because the dev is lazy.", 'F1', 'F5',
@@ -353,21 +356,19 @@ while playing:
             print("You're unable to go this way.")
             print("-" * 20)
     elif 'equip' in command.lower():
-        item_name_to_equip = command[6:]
+        item_to_equip = command[6:]
 
         # See if we have the item in the inventory
         try:
-            if player.find_item(item_name_to_equip):
-                print("You equip the %s" % item_name_to_equip)
+            if player.find_item(item_to_equip):
+                print("You equip the %s" % item_to_equip)
         except KeyError:
             print("You don't have one.")
     elif 'use' in command.lower():
         item_to_use = command[4:]
-
         if player.find_item(item_to_use):
-            try:
-                player.use(item_to_use)
-            except KeyError:
-                print("You don't have this item.")
+            player.use(item_to_use)
+        else:
+            print("You don't have this item.")
     else:
         print("Command not recognized.")
