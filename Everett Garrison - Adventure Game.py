@@ -1,7 +1,7 @@
 class Room(object):
     def __init__(self, name, description, north=None, east=None, south=None, west=None, up=None, down=None, enter=None,
                  items=None):
-        if items is not None:
+        if items is None:
             items = []
         self.name = name
         self.description = description
@@ -13,6 +13,7 @@ class Room(object):
         self.down = down
         self.enter = enter
         self.characters = []
+        self.items = items
 
 
 class Item(object):
@@ -193,7 +194,7 @@ class Character(object):
 class Player(object):
     def __init__(self, starting_location):
         self.health = 100
-        self.inventory = [Makeshiftsword(), Makeshiftarmor(), Cavekey()]
+        self.inventory = [Makeshiftsword(), Makeshiftarmor(), Cavekey(), Weapon("Sword", 10)]
         self.current_location = starting_location
         self.weapon = None
         self.armor = None
@@ -214,33 +215,33 @@ class Player(object):
         room_name = getattr(self.current_location, direction)
         return globals()[room_name]
 
-    def equip(self, item):
-        if isinstance(item, Weapon):
-            self.weapon = item
-            item.equip()
-        elif isinstance(item, Armor):
-            self.armor = item
-            item.equip()
+    def equip(self, _item):
+        if isinstance(_item, Weapon):
+            self.weapon = _item
+            print("You equip the %s weapon" % _item.name)
+        elif isinstance(_item, Armor):
+            self.armor = _item
+            print("You equip the %s armor" % _item.name)
 
-    def unequip(self, item):
-        if isinstance(item, Weapon):
+    def unequip(self, _item):
+        if isinstance(_item, Weapon):
             self.weapon = None
             print("You put away your weapon.")
-        elif isinstance(item, Armor):
+        elif isinstance(_item, Armor):
             self.armor = None
             print("You take off your armor.")
 
-    def use(self, item):
+    def use(self, _item):
         print("Test")
-        if type(item) is Consumable:
+        if type(_item) is Consumable:
             print("Test2")
-            item.consume()
+            _item.consume()
 
     def find_item(self, item_name):
-        for item in self.inventory:
-            if item.name == item_name:
-                return True
-        return False
+        for _item in self.inventory:
+            if _item.name == item_name:
+                return _item
+        return None
 
 
 # Items
@@ -360,15 +361,28 @@ while playing:
 
         # See if we have the item in the inventory
         try:
-            if player.find_item(item_to_equip):
-                print("You equip the %s" % item_to_equip)
-        except KeyError:
+            item = player.find_item(item_to_equip)
+            if item is None:
+                raise AttributeError
+            player.equip(item)
+        except AttributeError:
             print("You don't have one.")
     elif 'use' in command.lower():
         item_to_use = command[4:]
+
         if player.find_item(item_to_use):
             player.use(item_to_use)
         else:
             print("You don't have this item.")
+    elif 'take off' in command.lower():
+        item_to_unequip = command[8:]
+
+        try:
+            item = player.find_item(item_to_unequip)
+            if item is None:
+                raise AttributeError
+            player.unequip(item)
+        except AttributeError:
+            print("You don't have one equipped.")
     else:
         print("Command not recognized.")
