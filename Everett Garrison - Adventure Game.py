@@ -156,16 +156,24 @@ class Demonheart(Consumable):
 
     def consume(self):
         print("You savagely rip and tear into the heart, devouring it with the ferocity of the beast it once belonged "
-              "to.")  # Increase health by some amount
+              "to.")  # Increases health by some amount
 
 
 class Dynamite(Consumable):
     def __init__(self):
-        super(Dynamite, self).__init__("Situational Dynamite™")
+        super(Dynamite, self).__init__("Situational Dynamite")
 
     def consume(self):
         print("You light the fuse on the dynamite and it flies out of your hand and slams into the roof at the top of "
               "\nthe Ominous Cave, causing it to explode and expose a rope that leads skywards.")
+
+
+class Shovel(Consumable):
+    def __init__(self):
+        super(Shovel, self).__init__("Shovel")
+
+    def consume(self):
+        print("You push the shovel's head into the ground and start digging.")
 
 
 class Character(object):
@@ -261,8 +269,7 @@ wiebe.attack(orc)
 # Room instantiation
 FSTART = Room("Forest Start", "The beginning of your journey, where it all begins. There's trees around you as far as"
                               "\nthe eye can see, and right above you the trees open up to allow a ray of sunshine to"
-                              "\nshine onto a pentagram that you are standing on.", 'F1', 'F2', 'F3', 'F4', None, None,
-              None)
+                              "\nshine onto a pentagram that you are standing on.", 'F1', 'F2', 'F3', 'F4')
 F1 = Room("Forest Clearing", "There's a mutated rat you cannot fight yet here because the dev is lazy.", 'F14', 'F2',
           'FSTART', 'F4')
 F2 = Room("Forest Clearing", "There's a mutated rat you cannot fight yet here because the dev is lazy.", 'F1', 'F5',
@@ -304,10 +311,12 @@ F14 = Room("A calm forest crossroads",
            "You look around and feel an odd sense of calm here, as if you're safe for now. A signpost in the middle of "
            "\nthe road points in the four cardinal directions, with labels for each. "
            "\n'North: Another crossroads,"
-           "\nEast: Strange Faerie Man Wannabe's Home and Piggy Fountain, "
-           "\nSouth: Forest clearing, West: Blocked up Cave.", 'F17', 'F15', 'F1', None)
+           "\nEast: Strange Faerie Man Wannabe's Home and shop, and Piggy Fountain,"
+           "\nSouth: Forest clearing,"
+           "\nWest: Locked up Cultist cave.", 'F17', 'F15', 'F1', None)
 F15 = Room("Faerie Man's Home (Outside)", "The outside of the weird Faerie wannabe man's home. It smells of cottage "
-                                          "cheese and loneliness.", None, 'F16', None, 'F14')
+                                          "cheese and loneliness. His home also doubles as a small shop.", None, 'F16',
+           None, 'F14')
 F16 = Room("Piggy Fountain", "There's a nice sense of calm here as you look at a large fountain ordained with a pig"
                              " spitting a stream of water \ninto a round basin. At the bottom of the basin you can see"
                              " something small glittering in the light.", None, None, None, 'F15')
