@@ -177,11 +177,13 @@ class Shovel(Consumable):
 
 
 class Character(object):
-    def __init__(self, name, health, weapon, armor):
+    def __init__(self, name, health, weapon, armor, strength, defense):
         self.name = name
         self.health = health
         self.weapon = weapon
         self.armor = armor
+        self.strength = strength
+        self.defense = defense
 
     def take_damage(self, damage):
         if damage < self.armor.armor_amt:
@@ -199,11 +201,19 @@ class Character(object):
         target.take_damage(self.weapon.weapon_damage)
 
 
+class YouVars:
+    health = 100
+    defense = 0
+    strength = 0
+    weapon = None
+    armor = None
+
+
 class Player(object):
     def __init__(self, starting_location):
-        self.health = 100
-        self.inventory = [Makeshiftsword(), Makeshiftarmor(), Cavekey(), Weapon("Sword", 10)]
         self.current_location = starting_location
+        self.inventory = [Makeshiftsword(), Makeshiftarmor(), Cavekey(), Weapon("Sword", 10)]
+        self.exp = 0
         self.weapon = None
         self.armor = None
 
@@ -258,10 +268,9 @@ canoe = Weapon("Canoe", 84)
 wiebe_armor = Armor("Armor of the gods", 1000000000000000000000000000)
 
 # Characters
-orc = Character("Orc", 100, sword, Armor("Generic Armor", 2))
-wiebe = Character("Wiebe", 10000000000, canoe, wiebe_armor)
-
-
+orc = Character("Orc", 100, sword, Armor("Generic Armor", 2), 5, 5)
+wiebe = Character("Wiebe", 10000000000, canoe, wiebe_armor, 100000, 100000)
+player_c = Character("You", YouVars.health, YouVars.weapon, YouVars.armor, YouVars.strength, YouVars.defense)
 orc.attack(wiebe)
 wiebe.attack(orc)
 
