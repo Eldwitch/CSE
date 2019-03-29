@@ -53,6 +53,7 @@ class Makeshiftsword(Weapon):
         super(Makeshiftsword, self).__init__("Makeshift sword", 5)
 
     def equip(self):
+        YouVars.weapon.append(self)
         print("You equip the Makeshift Sword.")
 
 
@@ -61,6 +62,7 @@ class Gianthand(Weapon):
         super(Gianthand, self).__init__("Giant's hand", 10)
 
     def equip(self):
+        YouVars.weapon.append(self)
         print("You equip the Giant's hand.")
 
 
@@ -69,6 +71,7 @@ class Makeshiftarmor(Armor):
         super(Makeshiftarmor, self).__init__("Makeshift armor", 5)
 
     def equip(self):
+        YouVars.armor.append(self)
         print("You put on the Makeshift armor.")
 
 
@@ -77,6 +80,7 @@ class Giantskin(Armor):
         super(Giantskin, self).__init__("Giant's skin", 10)
 
     def equip(self):
+        YouVars.armor.append(self)
         print("You put on the Giant's skin.")
 
 
@@ -92,9 +96,11 @@ class Giantsheart(Consumable):
 class Healthpotion(Consumable):
     def __init__(self):
         super(Healthpotion, self).__init__("Health potion")
+        self.health_healed = 25
 
     def consume(self):
-        print("You drink the Health potion and restore ___ health.")
+        YouVars.health += self.health_healed
+        print("You drink the Health potion and restore 25 health.")
 
 
 class Cavekey(Consumable):
@@ -111,6 +117,7 @@ class Ironsword(Weapon):
         super(Ironsword, self).__init__("Iron sword", 15)
 
     def equip(self):
+        YouVars.weapon.append(self)
         print("You equip the Iron sword.")
 
 
@@ -119,6 +126,7 @@ class Ironarmor(Armor):
         super(Ironarmor, self).__init__("Iron armor", 15)
 
     def equip(self):
+        YouVars.armor.append(self)
         print("You put on the Iron armor.")
 
 
@@ -136,6 +144,7 @@ class Demonhorn(Weapon):
         super(Demonhorn, self).__init__("Demon's horn", 20)
 
     def equip(self):
+        YouVars.weapon.append(self)
         print("You equip the Demon's horn.")
 
     def attack(self):
@@ -147,6 +156,7 @@ class Demonskin(Armor):
         super(Demonskin, self).__init__("Demon's skin", 20)
 
     def equip(self):
+        YouVars.armor.append(self)
         print("You put on the Demon's skin.")
 
 
@@ -202,9 +212,12 @@ class Character(object):
 
 
 class YouVars:
+    max_health = 100
     health = 100
-    defense = 0
-    strength = 0
+    min_defense = 1
+    min_strength = 1
+    defense = 1
+    strength = 1
     weapon = None
     armor = None
 
@@ -254,6 +267,14 @@ class Player(object):
         if type(_item) is Consumable:
             print("Test2")
             _item.consume()
+            self.inventory.remove(_item)
+
+    def take(self, _item):
+        if _item not in self.inventory:
+            print("U wot m8.")
+        else:
+            print("You take the item from off the floor.")
+            self.inventory.append(_item)
 
     def find_item(self, item_name):
         for _item in self.inventory:
@@ -263,6 +284,9 @@ class Player(object):
 
 
 # Items
+fists = Weapon("Fists", 1)
+nude = Armor("Nothing", 1)
+# Test items
 sword = Weapon("Sword", 10)
 canoe = Weapon("Canoe", 84)
 wiebe_armor = Armor("Armor of the gods", 1000000000000000000000000000)
@@ -270,7 +294,11 @@ wiebe_armor = Armor("Armor of the gods", 1000000000000000000000000000)
 # Characters
 orc = Character("Orc", 100, sword, Armor("Generic Armor", 2), 5, 5)
 wiebe = Character("Wiebe", 10000000000, canoe, wiebe_armor, 100000, 100000)
+
+# Player character
 player_c = Character("You", YouVars.health, YouVars.weapon, YouVars.armor, YouVars.strength, YouVars.defense)
+
+# Test actions
 orc.attack(wiebe)
 wiebe.attack(orc)
 
