@@ -87,8 +87,10 @@ class Giantskin(Armor):
 class Giantsheart(Consumable):
     def __init__(self):
         super(Giantsheart, self).__init__("Giant's heart")
+        self.healthadded = 50
 
     def consume(self):
+        YouVars.max_health += self.healthadded
         print("You savagely bite into the heart, devouring it with the ferocity of the beat it once belonged to.")
         # Increase health by some amount
 
@@ -108,6 +110,11 @@ class Cavekey(Consumable):
         super(Cavekey, self).__init__("Ominous Cave Key")
 
     def consume(self):
+        F14.description = "You look around and feel an odd sense of calm here, as if you're safe for now. A signpost " \
+                          "in the middle of \nthe road points in the four cardinal directions, with labels for each. " \
+                          "\n'North: Another crossroads, \nEast: Strange Faerie Man Wannabe's Home and shop, and" \
+                          " Piggy Fountain, \nSouth: Forest clearing,\nWest: Unlocked Cultist cave."
+        F14.west = 'CSTART'
         print("You think really hard about using the key and it flies out of your hand and into the lock on the "
               "cave's entrance. The key turns itself and opens the cave for you.")
 
@@ -132,9 +139,14 @@ class Ironarmor(Armor):
 
 class Cultistbrew(Consumable):
     def __init__(self):
-        super(Cultistbrew, self).__init__("Cultist's special brew")
+        super(Cultistbrew, self).__init__("Cultist's special brew. WARNING: will lower your max health and increase "
+                                          "your strength.")
+        self.healthremoved = 50
+        self.strengthadded = 15
 
     def consume(self):
+        YouVars.max_health = self.healthremoved
+        YouVars.strength = self.strengthadded
         print("You pop the cork off of the bottle and chug the whole thing down in one go. You suddenly feel stronger,"
               " but your skin starts to feel frail, \nalmost like glass.")
 
@@ -163,8 +175,10 @@ class Demonskin(Armor):
 class Demonheart(Consumable):
     def __init__(self):
         super(Demonheart, self).__init__("Demon's heart")
+        self.healthincrease = 50
 
     def consume(self):
+        YouVars.max_health += self.healthincrease
         print("You savagely rip and tear into the heart, devouring it with the ferocity of the beast it once belonged "
               "to.")  # Increases health by some amount
 
@@ -174,6 +188,7 @@ class Dynamite(Consumable):
         super(Dynamite, self).__init__("Situational Dynamite")
 
     def consume(self):
+        C8.up = 'win_room'
         print("You light the fuse on the dynamite and it flies out of your hand and slams into the roof at the top of "
               "\nthe Ominous Cave, causing it to explode and expose a rope that leads skywards.")
 
@@ -183,7 +198,10 @@ class Shovel(Consumable):
         super(Shovel, self).__init__("Shovel")
 
     def consume(self):
-        print("You push the shovel's head into the ground and start digging.")
+        C9.down = 'PSTART'
+        print("The shovel flies off towards the small gravel area behind the rogue cultist's shop. It digs it's head"
+              " into the ground and starts digging. \nAfter a small amount of digging the gravel all falls away and a "
+              "large pit is revealed underneath it.")
 
 
 class Character(object):
@@ -355,7 +373,7 @@ F15 = Room("Faerie Man's Home (Outside)", "The outside of the weird Faerie wanna
                                           "cheese and loneliness. His home also doubles as a small shop.", None, 'F16',
            None, 'F14')
 F16 = Room("Piggy Fountain", "There's a nice sense of calm here as you look at a large fountain ordained with a pig"
-                             " spitting a stream of water \ninto a round basin. At the bottom of the basin you can see"
+                             " spitting a stream of water into a round basin. \nAt the bottom of the basin you can see"
                              " something small glittering in the light.", None, None, None, 'F15')
 F17 = Room("Another Crossroads", "You walk into another crossroads, and a similar sign stands in the center of the area"
                                  " to inform you of what is where."
@@ -378,7 +396,14 @@ T3 = Room("The fourth floor of the Very Tall Tower", "An Adult Giant slumbers he
 T4 = Room("The second floor of the Very Tall Tower", "The Last Giant slumbers here, waking and killing it would make "
                                                      "the entire race extinct forever.",
           None, None, None, None, None, 'T3')
-
+CSTART = Room("Ominous cave entrance", "The entrance to a damp, smelly cave. You hear chants in the distance and see "
+                                       "what appears to be a small shop ahead of you, past a very tall ladder \nthat "
+                                       "reaches far into the cave's y axis.", None, 'F14', None, 'F1')
+C1 = Room("The bottom of a large ladder.", "You stare up the large ladder and hear the chanting faintly, the rungs "
+                                           "beckoning you to grasp and climb them.", None, 'CSTART', None, 'CSHOP',
+          'C2')
+CSHOP = Room("A rogue cultist's shop.", "A small, humble shop set up by a former cultist. You can't buy anything yet, "
+                                        "but he sure does exist.", None, 'C1', None, 'C9')
 
 player = Player(FSTART)
 
