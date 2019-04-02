@@ -322,6 +322,7 @@ wiebe.attack(orc)
 
 
 # Room instantiation
+# Forest
 FSTART = Room("Forest Start", "The beginning of your journey, where it all begins. There's trees around you as far as"
                               "\nthe eye can see, and right above you the trees open up to allow a ray of sunshine to"
                               "\nshine onto a pentagram that you are standing on.", 'F1', 'F2', 'F3', 'F4')
@@ -383,6 +384,7 @@ F17 = Room("Another Crossroads", "You walk into another crossroads, and a simila
                                  "\nWest: Another dead end'.", None, 'TSTART', 'F14', 'F18')
 F18 = Room("Dead End, Again", "Another dead end with some pieces of scrap metal strewn about on the ground "
                               "haphazardly.", None, 'F17')
+# Forest Tower
 TSTART = Room("The First Floor of a Very Tall Tower", "A Baby Giant slumbers on the floor. You are unable to wake it up"
                                                       "\nor fight it yet because those systems are not in place yet.",
               None, None, None, None, 'T1', 'TB')
@@ -396,14 +398,46 @@ T3 = Room("The fourth floor of the Very Tall Tower", "An Adult Giant slumbers he
 T4 = Room("The second floor of the Very Tall Tower", "The Last Giant slumbers here, waking and killing it would make "
                                                      "the entire race extinct forever.",
           None, None, None, None, None, 'T3')
+# Ominous Cave
 CSTART = Room("Ominous cave entrance", "The entrance to a damp, smelly cave. You hear chants in the distance and see "
                                        "what appears to be a small shop ahead of you, past a very tall ladder \nthat "
                                        "reaches far into the cave's y axis.", None, 'F14', None, 'F1')
-C1 = Room("The bottom of a large ladder.", "You stare up the large ladder and hear the chanting faintly, the rungs "
-                                           "beckoning you to grasp and climb them.", None, 'CSTART', None, 'CSHOP',
+C1 = Room("The bottom of a large ladder", "You stare up the large ladder and hear the chanting faintly, the rungs "
+                                          "beckoning you to grasp and climb them.", None, 'CSTART', None, 'CSHOP',
           'C2')
-CSHOP = Room("A rogue cultist's shop.", "A small, humble shop set up by a former cultist. You can't buy anything yet, "
-                                        "but he sure does exist.", None, 'C1', None, 'C9')
+CSHOP = Room("A rogue cultist's shop", "A small, humble shop set up by a former cultist. You can't buy anything yet, "
+                                       "but he sure does exist.", None, 'C1', None, 'C9')
+C2 = Room("Ladder part 1", "What a thrill... \nWith darkness and silence through the night...", None, None, None, None,
+          'C3', 'C1')
+C3 = Room("Ladder part 2: Electric Boogaloo", "What a thrill... \nI'm searching and I'll melt into you...", None, None,
+          None, None, 'C4', 'C2')
+C4 = Room("Ladder part 3: The Climb Continues", "What a fear in my heart... But you're so supreme!", None, None, None,
+          None, 'C5', 'C3')
+C5 = Room("Ladder part 4: This reference is still going", "I give my life, not for honor, but for you! (Snake Eater) "
+                                                          "\nIn my time, there'll be no one else...", None, None, None,
+          None, 'C6', 'C4')
+C6 = Room("Ladder part 5: The Final Rung", "Crime, it's the way I fly to you! (Snake Eater)"
+                                           "\nI'm still in a dream, Snake Eater...", None, None, None, 'C7', None, 'C5')
+C7 = Room("Cultist's hallway", "A single cultist stands here, frozen because I still do not have a battle system coded "
+                               "yet.", None, 'C6', None, 'C8')
+C8 = Room("The cultist's lair", "The cultists are chanting to summon a demon. They're all frozen though because that "
+                                "battle system still isn't in place yet, sorry.", None, 'C7')
+C9 = Room("A patch of gravel", "It's a small patch of gravel behind the Rogue Cultist's shop. \nIt feels loose somehow"
+                               ", but no matter how hard you step or jump on it, it doesn't give way to whatever is "
+                               "beneath it.", None, 'CSHOP')
+# The Pit
+PSTART = Room("The bottom of The Pit", "You willingly fall down the large hole and land on a soft patch of... bones."
+                                       "\nYeah, you're starting to see why this place was covered up.", None, 'P1',
+              None, None, None, 'PB')
+PB = Room("Pit pit", "A small pit within in the pit. There seems to be a piece of shiny metal here, too.", None, None,
+          None, None, 'PSTART')
+P1 = Room("Crazed hobo's squatting spot", "A crazed hobo sits here, waving a spork at you while he clutches a can "
+                                          "of beans. \nOther than that though, he's frozen, since I still don't have a "
+                                          "freaking battle system.", None, 'P2', None, 'PSTART')
+P2 = Room("A shotgun...?", "A Sentient Shotgun floats here, yelling at you various horrible things."
+                           "\nIt too is a frozen being, for it's creator still hath not coded upon him a way to "
+                           "express his rage.", None, 'P3', None, 'P1')
+P3 = Room("A portal out", "A one-way portal back up to the Rogue Cultist's shop.", None, None, None, 'P2', 'CSHOP')
 
 player = Player(FSTART)
 
