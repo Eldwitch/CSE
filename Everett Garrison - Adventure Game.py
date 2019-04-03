@@ -1,6 +1,5 @@
 class Room(object):
-    def __init__(self, name, description, north=None, east=None, south=None, west=None, up=None, down=None, enter=None,
-                 items=None):
+    def __init__(self, name, description, north=None, east=None, south=None, west=None, up=None, down=None, items=None):
         if items is None:
             items = []
         self.name = name
@@ -11,7 +10,6 @@ class Room(object):
         self.west = west
         self.up = up
         self.down = down
-        self.enter = enter
         self.characters = []
         self.items = items
 
@@ -107,14 +105,15 @@ class Healthpotion(Consumable):
 
 class Cavekey(Consumable):
     def __init__(self):
-        super(Cavekey, self).__init__("Ominous Cave Key")
+        super(Cavekey, self).__init__("Cave key")
+        self.level_change = 'CSTART'
 
     def consume(self):
         F14.description = "You look around and feel an odd sense of calm here, as if you're safe for now. A signpost " \
                           "in the middle of \nthe road points in the four cardinal directions, with labels for each. " \
                           "\n'North: Another crossroads, \nEast: Strange Faerie Man Wannabe's Home and shop, and" \
                           " Piggy Fountain, \nSouth: Forest clearing,\nWest: Unlocked Cultist cave."
-        F14.west = 'CSTART'
+        F14.west = self.level_change
         print("You think really hard about using the key and it flies out of your hand and into the lock on the "
               "cave's entrance. The key turns itself and opens the cave for you.")
 
@@ -186,9 +185,10 @@ class Demonheart(Consumable):
 class Dynamite(Consumable):
     def __init__(self):
         super(Dynamite, self).__init__("Situational Dynamite")
+        self.level_change = 'win_room'
 
     def consume(self):
-        C8.up = 'win_room'
+        C8.up = self.level_change
         print("You light the fuse on the dynamite and it flies out of your hand and slams into the roof at the top of "
               "\nthe Ominous Cave, causing it to explode and expose a rope that leads skywards.")
 
@@ -196,9 +196,10 @@ class Dynamite(Consumable):
 class Shovel(Consumable):
     def __init__(self):
         super(Shovel, self).__init__("Shovel")
+        self.level_change = 'PSTART'
 
     def consume(self):
-        C9.down = 'PSTART'
+        C9.down = self.level_change
         print("The shovel flies off towards the small gravel area behind the rogue cultist's shop. It digs it's head"
               " into the ground and starts digging. \nAfter a small amount of digging the gravel all falls away and a "
               "large pit is revealed underneath it.")
@@ -244,6 +245,7 @@ class Player(object):
     def __init__(self, starting_location):
         self.current_location = starting_location
         self.inventory = [Makeshiftsword(), Makeshiftarmor(), Cavekey(), Weapon("Sword", 10)]
+        self.level = 1
         self.exp = 0
         self.weapon = None
         self.armor = None
@@ -309,12 +311,12 @@ sword = Weapon("Sword", 10)
 canoe = Weapon("Canoe", 84)
 wiebe_armor = Armor("Armor of the gods", 1000000000000000000000000000)
 
-# Characters
-orc = Character("Orc", 100, sword, Armor("Generic Armor", 2), 5, 5)
-wiebe = Character("Wiebe", 10000000000, canoe, wiebe_armor, 100000, 100000)
-
 # Player character
 player_c = Character("You", YouVars.health, YouVars.weapon, YouVars.armor, YouVars.strength, YouVars.defense)
+
+# Test characters
+orc = Character("Orc", 100, sword, Armor("Generic Armor", 2), 5, 5)
+wiebe = Character("Wiebe", 10000000000, canoe, wiebe_armor, 100000, 100000)
 
 # Test actions
 orc.attack(wiebe)
@@ -365,8 +367,8 @@ FS = Room("Faerie sword clearing", "After murdering several faeries you walk int
                                    "\nlight of its own glory.", 'F13')
 F14 = Room("A calm forest crossroads",
            "You look around and feel an odd sense of calm here, as if you're safe for now. A signpost in the middle of "
-           "\nthe road points in the four cardinal directions, with labels for each. "
-           "\n'North: Another crossroads,"
+           "\nthe road points in the four cardinal directions, with labels for each."
+           "\nNorth: Another crossroads,"
            "\nEast: Strange Faerie Man Wannabe's Home and shop, and Piggy Fountain,"
            "\nSouth: Forest clearing,"
            "\nWest: Locked up Cultist cave.", 'F17', 'F15', 'F1', None)
