@@ -1,5 +1,17 @@
+def fight(target):
+    print("You get into a fight with %s" % target.name)
+    while YouVars.health > 0 and target.health > 0:
+        lcommand = input("What do you want to do? ")
+
+        if "attack" in lcommand.lower():
+            player_c.attack(target)
+
+
 class Room(object):
-    def __init__(self, name, description, north=None, east=None, south=None, west=None, up=None, down=None, items=None):
+    def __init__(self, name, description, north=None, east=None, south=None, west=None, up=None, down=None, items=None,
+                 enemies=None):
+        if enemies is None:
+            enemies = []
         if items is None:
             items = []
         self.name = name
@@ -12,6 +24,7 @@ class Room(object):
         self.down = down
         self.characters = []
         self.items = items
+        self.enemies = enemies
 
 
 class Item(object):
@@ -185,7 +198,7 @@ class Demonheart(Consumable):
 class Dynamite(Consumable):
     def __init__(self):
         super(Dynamite, self).__init__("Situational Dynamite")
-        self.level_change = 'win_room'
+        self.level_change = 'WIN_ROOM'
 
     def consume(self):
         C8.up = self.level_change
@@ -306,28 +319,20 @@ class Player(object):
 # Items
 fists = Weapon("Fists", 1)
 nude = Armor("Nothing", 1)
-# Test items
-sword = Weapon("Sword", 10)
-canoe = Weapon("Canoe", 84)
-wiebe_armor = Armor("Armor of the gods", 1000000000000000000000000000)
 
 # Player character
 player_c = Character("You", YouVars.health, YouVars.weapon, YouVars.armor, YouVars.strength, YouVars.defense)
 
-# Test characters
-orc = Character("Orc", 100, sword, Armor("Generic Armor", 2), 5, 5)
-wiebe = Character("Wiebe", 10000000000, canoe, wiebe_armor, 100000, 100000)
-
-# Test actions
-orc.attack(wiebe)
-wiebe.attack(orc)
+# Enemy
+m_rat = Character("Mutated Rat", 15, Weapon("Claw", 2), Armor("Rat hide", 2), 1, 1)
 
 
 # Room instantiation
 # Forest
 FSTART = Room("Forest Start", "The beginning of your journey, where it all begins. There's trees around you as far as"
                               "\nthe eye can see, and right above you the trees open up to allow a ray of sunshine to"
-                              "\nshine onto a pentagram that you are standing on.", 'F1', 'F2', 'F3', 'F4')
+                              "\nshine onto a pentagram that you are standing on.", 'F1', 'F2', 'F3', 'F4', None, None,
+              [Healthpotion()])
 F1 = Room("Forest Clearing", "There's a mutated rat you cannot fight yet here because the dev is lazy.", 'F14', 'F2',
           'FSTART', 'F4')
 F2 = Room("Forest Clearing", "There's a mutated rat you cannot fight yet here because the dev is lazy.", 'F1', 'F5',
@@ -437,9 +442,13 @@ P1 = Room("Crazed hobo's squatting spot", "A crazed hobo sits here, waving a spo
                                           "of beans. \nOther than that though, he's frozen, since I still don't have a "
                                           "freaking battle system.", None, 'P2', None, 'PSTART')
 P2 = Room("A shotgun...?", "A Sentient Shotgun floats here, yelling at you various horrible things."
-                           "\nIt too is a frozen being, for it's creator still hath not coded upon him a way to "
+                           "\nIt too is frozen, for it's creator still hath not coded upon him a way to express his "
+                           "rage."
                            "express his rage.", None, 'P3', None, 'P1')
 P3 = Room("A portal out", "A one-way portal back up to the Rogue Cultist's shop.", None, None, None, 'P2', 'CSHOP')
+# Win room
+WIN_ROOM = Room("The last room.", "A giant cave full of various treasures! Congrats, you won!", None, None, None, None,
+                None, 'P8')
 
 player = Player(FSTART)
 
@@ -453,6 +462,10 @@ while playing:
     print(player.current_location.description)
     print("-" * 20)
 
+    if len(player.current_location.items) > 0:
+        print("The following items are in the room:")
+        for item in player.current_location.items:
+            print(item.name)
     command = input(">_")
     if command.lower() in ('q', 'quit', 'exit'):
         playing = False
