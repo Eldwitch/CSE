@@ -50,7 +50,6 @@ class Armor(Item):
 class Consumable(Item):
     def __init__(self, name):
         super(Consumable, self).__init__(name)
-        self.type = 1  # Make multiple item types like keys, potions, etc. 1 = consumables, 2 = keys
 
 
 class Gold(Item):
@@ -151,16 +150,14 @@ class Ironarmor(Armor):
 
 class Cultistbrew(Consumable):
     def __init__(self):
-        super(Cultistbrew, self).__init__("Cultist's special brew. WARNING: will lower your max health and increase "
-                                          "your strength.")
+        super(Cultistbrew, self).__init__("Cultist's special brew. WARNING: will lower your max health.")
         self.healthremoved = 50
-        self.strengthadded = 15
 
     def consume(self):
         YouVars.max_health = self.healthremoved
-        YouVars.strength = self.strengthadded
-        print("You pop the cork off of the bottle and chug the whole thing down in one go. You suddenly feel stronger,"
-              " but your skin starts to feel frail, \nalmost like glass.")
+        print("You pop the cork off of the bottle and chug the whole thing down in one go."
+              "\nYour skin suddenly starts to feel frail, almost like glass. Your maximum health has been lowered by "
+              "50!")
 
 
 class Demonhorn(Weapon):
@@ -219,13 +216,11 @@ class Shovel(Consumable):
 
 
 class Character(object):
-    def __init__(self, name, health, weapon, armor, strength, defense):
+    def __init__(self, name, health, weapon, armor):
         self.name = name
         self.health = health
         self.weapon = weapon
         self.armor = armor
-        self.strength = strength
-        self.defense = defense
 
     def take_damage(self, damage):
         if damage < self.armor.armor_amt:
@@ -246,10 +241,6 @@ class Character(object):
 class YouVars:
     max_health = 100
     health = 100
-    min_defense = 1
-    min_strength = 1
-    defense = 1
-    strength = 1
     weapon = None
     armor = None
 
@@ -289,10 +280,10 @@ class Player(object):
 
     def unequip(self, _item):
         if isinstance(_item, Weapon):
-            self.weapon = None
+            YouVars.weapon = fists
             print("You put away your weapon.")
         elif isinstance(_item, Armor):
-            self.armor = None
+            self.armor = nude
             print("You take off your armor.")
 
     def use(self, _item):
@@ -321,10 +312,10 @@ fists = Weapon("Fists", 1)
 nude = Armor("Nothing", 1)
 
 # Player character
-player_c = Character("You", YouVars.health, YouVars.weapon, YouVars.armor, YouVars.strength, YouVars.defense)
+player_c = Character("You", YouVars.health, YouVars.weapon, YouVars.armor)
 
 # Enemy
-m_rat = Character("Mutated Rat", 15, Weapon("Claw", 2), Armor("Rat hide", 2), 1, 1)
+m_rat = Character("Mutated Rat", 15, Weapon("Claw", 2), Armor("Rat hide", 2))
 
 
 # Room instantiation
@@ -504,5 +495,11 @@ while playing:
             player.unequip(item)
         except AttributeError:
             print("You don't have one equipped.")
+    elif 'pick up' in command.lower():
+        item_to_take = command[7:]
+
+        try:
+            if Room.items is not None:
+                print("pick the darn thing up you freaking fool.")
     else:
         print("Command not recognized.")

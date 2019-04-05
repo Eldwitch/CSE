@@ -57,6 +57,7 @@
           <entry key="project.open.time.39" value="3" />
           <entry key="project.open.time.40" value="1" />
           <entry key="project.open.time.41" value="1" />
+          <entry key="project.open.time.43" value="1" />
           <entry key="project.open.time.44" value="1" />
           <entry key="project.open.time.45" value="1" />
           <entry key="project.open.time.46" value="1" />
@@ -72,19 +73,19 @@
           <entry key="project.open.time.73" value="1" />
           <entry key="project.open.time.78" value="1" />
           <entry key="project.open.time.88" value="1" />
-          <entry key="project.opened" value="57" />
+          <entry key="project.opened" value="58" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="1" />
-          <entry key="py" value="28622" />
+          <entry key="py" value="28885" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="1" />
-          <entry key="Python" value="28622" />
+          <entry key="Python" value="28885" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -104,7 +105,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Inheritance.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
+            <state relative-caret-position="952">
               <caret line="56" selection-start-line="56" selection-end-line="56" />
               <folding>
                 <marker date="1551479364536" expanded="true" signature="22:27" ph="..." />
@@ -119,14 +120,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Everett Garrison - Adventure Game.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="35" lean-forward="true" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
-              <folding>
-                <marker date="1554413572762" expanded="true" signature="74:260" ph="..." />
-                <marker date="1554413572762" expanded="true" signature="6391:6854" ph="..." />
-                <marker date="1554413572762" expanded="true" signature="7740:7906" ph="..." />
-                <marker date="1554413572762" expanded="true" signature="9546:9737" ph="..." />
-              </folding>
+            <state relative-caret-position="371">
+              <caret line="499" column="8" lean-forward="true" selection-start-line="499" selection-start-column="8" selection-end-line="499" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -526,7 +521,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Inheritance.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
+        <state relative-caret-position="952">
           <caret line="56" selection-start-line="56" selection-end-line="56" />
           <folding>
             <marker date="1551479364536" expanded="true" signature="22:27" ph="..." />
@@ -539,14 +534,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Everett Garrison - Adventure Game.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="35" lean-forward="true" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
-          <folding>
-            <marker date="1554413572762" expanded="true" signature="74:260" ph="..." />
-            <marker date="1554413572762" expanded="true" signature="6391:6854" ph="..." />
-            <marker date="1554413572762" expanded="true" signature="7740:7906" ph="..." />
-            <marker date="1554413572762" expanded="true" signature="9546:9737" ph="..." />
-          </folding>
+        <state relative-caret-position="371">
+          <caret line="499" column="8" lean-forward="true" selection-start-line="499" selection-start-column="8" selection-end-line="499" selection-end-column="8" />
         </state>
       </provider>
     </entry>
