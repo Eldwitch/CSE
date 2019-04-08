@@ -251,8 +251,6 @@ class Player(object):
         self.inventory = [Makeshiftsword(), Makeshiftarmor(), Cavekey(), Weapon("Sword", 10)]
         self.level = 1
         self.exp = 0
-        self.weapon = None
-        self.armor = None
 
     def move(self, new_location):
         """This method moves a player to a new location
@@ -272,10 +270,10 @@ class Player(object):
 
     def equip(self, _item):
         if isinstance(_item, Weapon):
-            self.weapon = _item
+            YouVars.weapon = _item
             print("You equip the %s weapon" % _item.name)
         elif isinstance(_item, Armor):
-            self.armor = _item
+            YouVars.armor = _item
             print("You equip the %s armor" % _item.name)
 
     def unequip(self, _item):
@@ -283,7 +281,7 @@ class Player(object):
             YouVars.weapon = fists
             print("You put away your weapon.")
         elif isinstance(_item, Armor):
-            self.armor = nude
+            YouVars.armor = nude
             print("You take off your armor.")
 
     def use(self, _item):
@@ -305,6 +303,15 @@ class Player(object):
             if _item.name == item_name:
                 return _item
         return None
+
+    def pick_up(self, _item):
+        if _item in self.current_location.items and _item not in self.inventory:
+            print("You pick up the item.")
+            self.inventory.append(_item)
+
+    def view_inventory(self):
+        inventory = player.inventory
+        print("".join(inventory))
 
 
 # Items
@@ -443,7 +450,8 @@ WIN_ROOM = Room("The last room.", "A giant cave full of various treasures! Congr
 
 player = Player(FSTART)
 
-directions = ['north', 'east', 'south', 'west', 'up', 'down', 'enter']
+directions = ['north', 'east', 'south', 'west', 'up', 'down']
+short_directions = ['n', 'e', 's', 'w', 'u', 'd']
 playing = True
 
 # Controller
@@ -457,7 +465,12 @@ while playing:
         print("The following items are in the room:")
         for item in player.current_location.items:
             print(item.name)
+
     command = input(">_")
+    if command.lower() in short_directions:
+        pos = short_directions.index(command)
+        command = directions[pos]
+
     if command.lower() in ('q', 'quit', 'exit'):
         playing = False
     elif command.lower() in directions:
@@ -499,7 +512,13 @@ while playing:
         item_to_take = command[7:]
 
         try:
-            if Room.items is not None:
-                print("pick the darn thing up you freaking fool.")
+            item = player.find_item(player.current_location.items)
+            if item is None:
+                raise AttributeError
+            player.pick_up(item)
+        except AttributeError:
+            print("There is no item to pick up here.")
+    elif 'inventory' in command.lower():
+        player.view_inventory()
     else:
         print("Command not recognized.")
