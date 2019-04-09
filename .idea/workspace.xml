@@ -16,7 +16,7 @@
     <SUITE FILE_PATH="coverage/CSE$Fun.coverage" NAME="Fun Coverage Results" MODIFIED="1552339970823" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/CSE$Inheritance.coverage" NAME="Inheritance Coverage Results" MODIFIED="1551393067119" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/CSE$Dictionary_notes.coverage" NAME="Dictionary notes Coverage Results" MODIFIED="1548886919305" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/CSE$Everett_Garrison___Adventure_Game.coverage" NAME="Everett Garrison - Adventure Game Coverage Results" MODIFIED="1554412193554" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/CSE$Everett_Garrison___Adventure_Game.coverage" NAME="Everett Garrison - Adventure Game Coverage Results" MODIFIED="1554845796114" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/CSE$Semester_2_Notes.coverage" NAME="Semester 2 Notes Coverage Results" MODIFIED="1546985563103" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/notes" />
     <SUITE FILE_PATH="coverage/CSE$Everett_Garrison___Hangman.coverage" NAME="Everett Garrison - Hangman Coverage Results" MODIFIED="1548799059216" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/CSE$Text_tomfoolery.coverage" NAME="Text tomfoolery Coverage Results" MODIFIED="1546985569711" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/notes" />
@@ -48,7 +48,7 @@
           <entry key="project.open.time.23" value="1" />
           <entry key="project.open.time.29" value="3" />
           <entry key="project.open.time.31" value="3" />
-          <entry key="project.open.time.33" value="5" />
+          <entry key="project.open.time.33" value="7" />
           <entry key="project.open.time.34" value="2" />
           <entry key="project.open.time.35" value="2" />
           <entry key="project.open.time.36" value="4" />
@@ -73,29 +73,29 @@
           <entry key="project.open.time.73" value="1" />
           <entry key="project.open.time.78" value="1" />
           <entry key="project.open.time.88" value="1" />
-          <entry key="project.opened" value="58" />
+          <entry key="project.opened" value="60" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="1" />
-          <entry key="py" value="28885" />
+          <entry key="py" value="29879" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="1" />
-          <entry key="Python" value="28885" />
+          <entry key="Python" value="29879" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="py" value="41" />
+          <entry key="py" value="43" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Python" value="41" />
+          <entry key="Python" value="43" />
         </counts>
       </usages-collector>
     </session>
@@ -120,8 +120,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Everett Garrison - Adventure Game.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="371">
-              <caret line="499" column="8" lean-forward="true" selection-start-line="499" selection-start-column="8" selection-end-line="499" selection-end-column="8" />
+            <state relative-caret-position="160">
+              <caret line="304" column="46" lean-forward="true" selection-start-line="304" selection-start-column="46" selection-end-line="304" selection-end-column="46" />
             </state>
           </provider>
         </entry>
@@ -168,6 +168,7 @@
         <option value="$PROJECT_DIR$/Everett Garrison - Object World Map.py" />
         <option value="$PROJECT_DIR$/notes/Everett Garrison - Adventure Game.py" />
         <option value="$PROJECT_DIR$/Leveling system test.py" />
+        <option value="$PROJECT_DIR$/hnnn wiebe code hnngg.py" />
         <option value="$PROJECT_DIR$/Everett Garrison - Adventure Game.py" />
       </list>
     </option>
@@ -189,6 +190,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -205,7 +207,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -383,14 +384,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Structure" order="0" sideWeight="0.502451" side_tool="true" weight="0.27121213" />
       <window_info id="Favorites" order="1" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="2" sideWeight="0.49754903" weight="0.34015152" />
+      <window_info content_ui="combo" id="Project" order="2" sideWeight="0.49754903" weight="0.34545454" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49924242" weight="0.32894737" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49924242" visible="true" weight="0.32894737" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3881579" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -432,13 +432,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="18" column="18" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Everett Garrison - Hangman.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="20" column="38" selection-start-line="20" selection-start-column="38" selection-end-line="20" selection-end-column="38" />
         </state>
       </provider>
     </entry>
@@ -519,6 +512,20 @@
     <entry file="file://$PROJECT_DIR$/Leveling system test.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/hnnn wiebe code hnngg.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Everett Garrison - Hangman.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="388">
+          <caret line="29" column="4" lean-forward="true" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Inheritance.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="952">
@@ -534,8 +541,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Everett Garrison - Adventure Game.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="371">
-          <caret line="499" column="8" lean-forward="true" selection-start-line="499" selection-start-column="8" selection-end-line="499" selection-end-column="8" />
+        <state relative-caret-position="160">
+          <caret line="304" column="46" lean-forward="true" selection-start-line="304" selection-start-column="46" selection-end-line="304" selection-end-column="46" />
         </state>
       </provider>
     </entry>

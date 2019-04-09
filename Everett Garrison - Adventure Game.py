@@ -291,27 +291,23 @@ class Player(object):
             _item.consume()
             self.inventory.remove(_item)
 
-    def take(self, _item):
-        if _item not in self.inventory:
-            print("U wot m8.")
-        else:
-            print("You take the item from off the floor.")
-            self.inventory.append(_item)
-
-    def find_item(self, item_name):
+    def find_item(self, item_name):  # Takes the name of the item and returns the item itself
         for _item in self.inventory:
             if _item.name == item_name:
                 return _item
         return None
 
-    def pick_up(self, _item):
-        if _item in self.current_location.items and _item not in self.inventory:
-            print("You pick up the item.")
-            self.inventory.append(_item)
+    def pick_up(self):
+        if len(player.current_location.items) > 0:
+            print("You pick up the item(s).")
+            for _item in player.current_location.items:
+                self.inventory.append(_item)
+            player.current_location.items = []
 
     def view_inventory(self):
-        inventory = player.inventory
-        print("".join(inventory))
+        for _item in player.inventory:
+            print("You have a(n) %s." % _item.name)
+            print("-" * 20)
 
 
 # Items
@@ -512,10 +508,9 @@ while playing:
         item_to_take = command[7:]
 
         try:
-            item = player.find_item(player.current_location.items)
-            if item is None:
+            if len(player.current_location.items) < 0:
                 raise AttributeError
-            player.pick_up(item)
+            player.pick_up()
         except AttributeError:
             print("There is no item to pick up here.")
     elif 'inventory' in command.lower():
