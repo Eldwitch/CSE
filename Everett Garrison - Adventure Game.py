@@ -370,7 +370,7 @@ F14 = Room("A calm forest crossroads",
            "\nNorth: Another crossroads,"
            "\nEast: Strange Faerie Man Wannabe's Home and shop, and Piggy Fountain,"
            "\nSouth: Forest clearing,"
-           "\nWest: Locked up Cultist cave.", 'F17', 'F15', 'F1', None)
+           "\nWest: Locked up Cultist's cave.", 'F17', 'F15', 'F1', None)
 F15 = Room("Faerie Man's Home (Outside)", "The outside of the weird Faerie wannabe man's home. It smells of cottage "
                                           "cheese and loneliness. His home also doubles as a small shop.", None, 'F16',
            None, 'F14')
@@ -393,11 +393,11 @@ TB = Room("The Tower Basement", "You can barely see in front of yourself because
           None, None, None, 'TSTART')
 T1 = Room("The second floor of the Very Tall Tower", "A Child Giant slumbers here.", None, None, None, None, 'T2', 'T1')
 T2 = Room("The third floor of the Very Tall Tower", "A Teenage Giant slumbers here.", None, None, None, None, 'T3',
-          'T2')
+          'T1')
 T3 = Room("The fourth floor of the Very Tall Tower", "An Adult Giant slumbers here.", None, None, None, None, 'T4',
-          'T3')
-T4 = Room("The second floor of the Very Tall Tower", "The Last Giant slumbers here, waking and killing it would make "
-                                                     "the entire race extinct forever.",
+          'T2')
+T4 = Room("The roof of the Very Tall Tower", "The Last Giant slumbers here, waking and killing it would make "
+                                             "the entire race extinct forever.",
           None, None, None, None, None, 'T3')
 # Ominous Cave
 CSTART = Room("Ominous cave entrance", "The entrance to a damp, smelly cave. You hear chants in the distance and see "
@@ -449,6 +449,8 @@ player = Player(FSTART)
 directions = ['north', 'east', 'south', 'west', 'up', 'down']
 short_directions = ['n', 'e', 's', 'w', 'u', 'd']
 playing = True
+print("NOTE: You cannot use items or fight any enemies yet, sorry.")
+print("-" * 20)
 
 # Controller
 while playing:
@@ -474,9 +476,9 @@ while playing:
             next_room = player.find_room(command)
             player.move(next_room)
         except KeyError:
-            print("You're unable to go this way.")
+            print("You're unable to go this way, and now your nose hurts from running into an invisible wall.")
             print("-" * 20)
-    elif 'equip' in command.lower():
+    elif 'equip' or 'put on' in command.lower():
         item_to_equip = command[6:]
 
         # See if we have the item in the inventory
@@ -486,14 +488,14 @@ while playing:
                 raise AttributeError
             player.equip(item)
         except AttributeError:
-            print("You don't have one.")
+            print("You don't have one, you freaking nerd.")
     elif 'use' in command.lower():
         item_to_use = command[4:]
 
         if player.find_item(item_to_use):
             player.use(item_to_use)
         else:
-            print("You don't have this item.")
+            print("You don't have this item, you freakin' noid.")
     elif 'take off' in command.lower():
         item_to_unequip = command[8:]
 
@@ -503,7 +505,7 @@ while playing:
                 raise AttributeError
             player.unequip(item)
         except AttributeError:
-            print("You don't have one equipped.")
+            print("You don't have one equipped, duh.")
     elif 'pick up' in command.lower():
         item_to_take = command[7:]
 
@@ -512,8 +514,8 @@ while playing:
                 raise AttributeError
             player.pick_up()
         except AttributeError:
-            print("There is no item to pick up here.")
-    elif 'inventory' in command.lower():
+            print("There is no item to pick up here, you blind fool.")
+    elif 'inventory' or 'i' in command.lower():
         player.view_inventory()
     else:
         print("Command not recognized.")
