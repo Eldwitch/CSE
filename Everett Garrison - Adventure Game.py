@@ -271,10 +271,10 @@ class Player(object):
     def equip(self, _item):
         if isinstance(_item, Weapon):
             YouVars.weapon = _item
-            print("You equip the %s weapon" % _item.name)
+            print("You equip the %s." % _item.name)
         elif isinstance(_item, Armor):
             YouVars.armor = _item
-            print("You equip the %s armor" % _item.name)
+            print("You equip the %s." % _item.name)
 
     def unequip(self, _item):
         if isinstance(_item, Weapon):
@@ -285,9 +285,9 @@ class Player(object):
             print("You take off your armor.")
 
     def use(self, _item):
-        print("Test")
+        print("IT DON'T WORK")
         if type(_item) is Consumable:
-            print("Test2")
+            print("IT WORK")
             _item.consume()
             self.inventory.remove(_item)
 
@@ -478,7 +478,7 @@ while playing:
         except KeyError:
             print("You're unable to go this way, and now your nose hurts from running into an invisible wall.")
             print("-" * 20)
-    elif 'equip' or 'put on' in command.lower():
+    elif 'equip' in command.lower():
         item_to_equip = command[6:]
 
         # See if we have the item in the inventory
@@ -492,9 +492,12 @@ while playing:
     elif 'use' in command.lower():
         item_to_use = command[4:]
 
-        if player.find_item(item_to_use):
-            player.use(item_to_use)
-        else:
+        try:
+            item = player.find_item(item_to_use)
+            if item is None:
+                raise AttributeError
+            player.use(item)
+        except AttributeError:
             print("You don't have this item, you freakin' noid.")
     elif 'take off' in command.lower():
         item_to_unequip = command[8:]
