@@ -51,6 +51,9 @@ class Consumable(Item):
     def __init__(self, name):
         super(Consumable, self).__init__(name)
 
+    def consume(self):
+        print("You use the item.")
+
 
 class Gold(Item):
     def __init__(self):
@@ -285,11 +288,8 @@ class Player(object):
             print("You take off your armor.")
 
     def use(self, _item):
-        print("IT DON'T WORK")
-        if type(_item) is Consumable:
-            print("IT WORK")
-            _item.consume()
-            self.inventory.remove(_item)
+        _item.consume()
+        self.inventory.remove(_item)
 
     def find_item(self, item_name):  # Takes the name of the item and returns the item itself
         for _item in self.inventory:
