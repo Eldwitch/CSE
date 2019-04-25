@@ -325,8 +325,9 @@ m_rat = Character("Mutated Rat", 15, Weapon("Claw", 2), Armor("Rat hide", 2))
 # Forest
 FSTART = Room("Forest Start", "The beginning of your journey, where it all begins. There's trees around you as far as"
                               "\nthe eye can see, and right above you the trees open up to allow a ray of sunshine to"
-                              "\nshine onto a pentagram that you are standing on.", 'F1', 'F2', 'F3', 'F4', None, None,
-              [Healthpotion()])
+                              "\nshine onto a pentagram that you are standing on. You have no memories except one "
+                              "aching thought: 'Murder the giants.",
+              'F1', 'F2', 'F3', 'F4', None, None, [Healthpotion()])
 F1 = Room("Forest Clearing", "There's a mutated rat you cannot fight yet here because the dev is lazy.", 'F14', 'F2',
           'FSTART', 'F4')
 F2 = Room("Forest Clearing", "There's a mutated rat you cannot fight yet here because the dev is lazy.", 'F1', 'F5',
