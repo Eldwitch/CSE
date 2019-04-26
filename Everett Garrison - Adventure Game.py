@@ -5,6 +5,10 @@ def fight(target):
 
         if "attack" in lcommand.lower():
             player_c.attack(target)
+            target.attack(player_c)
+
+        elif "attack" not in lcommand:
+            target.attack(player_c)
 
 
 class Room(object):
@@ -499,7 +503,7 @@ while playing:
                 raise AttributeError
             player.use(item)
         except AttributeError:
-            print("You don't have this item, you freakin' noid.")
+            print("You either cannot use this item or you do not have it. Either way you are WRONG.")
     elif 'take off' in command.lower():
         item_to_unequip = command[8:]
 
