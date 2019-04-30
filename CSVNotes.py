@@ -2,19 +2,19 @@ import csv
 
 
 def validate(num: str):
-    if divisible_by_2(num) and not_divisible_by_2(num):
+    if is_it_even(num) and is_it_odd(num):
         return True
     return False
 
 
-def divisible_by_2(num: str):
+def is_it_even(num: str):
     second_num = int(num[1])  # This is the second number
     if second_num % 2 == 0:
         return True
     return False
 
 
-def not_divisible_by_2(num: str):
+def is_it_odd(num: str):
     first_num = int(num[0])  # This is the first number
     if first_num % 2 != 0:
         return True
@@ -50,6 +50,13 @@ def not_divisible_by_2(num: str):
 #             if first_num == 4:
 #                 writer.writerow(row)
 #     print("Done!")
+
+def reverse_it(string):
+    return string[::-1]
+
+
+print(reverse_it("!dlroW olleH"))
+
 
 with open("Book1.csv", 'r') as old_csv:
     with open('MyNewFile.csv', 'w', newline='') as new_csv:
