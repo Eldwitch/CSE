@@ -1,9 +1,14 @@
 def fight(target):
     print("You get into a fight with %s" % target.name)
     while YouVars.health > 0 and target.health > 0:
+        if YouVars.armor is None:
+            player_c.armor = nude
+        if YouVars.weapon is None:
+            player_c.weapon = fists
         lcommand = input("What do you want to do? ")
 
         if "attack" in lcommand.lower():
+            print(player_c.weapon)
             player_c.attack(target)
             target.attack(player_c)
 
@@ -14,8 +19,6 @@ def fight(target):
 class Room(object):
     def __init__(self, name, description, north=None, east=None, south=None, west=None, up=None, down=None, items=None,
                  enemies=None):
-        if enemies is None:
-            enemies = []
         if items is None:
             items = []
         self.name = name
@@ -245,6 +248,11 @@ class Character(object):
         target.take_damage(self.weapon.weapon_damage)
 
 
+# Items
+fists = Weapon("Fists", 2)
+nude = Armor("Nothing", 1)
+
+
 class YouVars:
     max_health = 100
     health = 100
@@ -314,15 +322,11 @@ class Player(object):
             print("-" * 20)
 
 
-# Items
-fists = Weapon("Fists", 1)
-nude = Armor("Nothing", 1)
-
 # Player character
 player_c = Character("You", YouVars.health, YouVars.weapon, YouVars.armor)
 
 # Enemy
-m_rat = Character("Mutated Rat", 15, Weapon("Claw", 2), Armor("Rat hide", 2))
+m_rat = Character("Mutated Rat", 3, Weapon("Claw", 2), Armor("Rat hide", 1))
 
 
 # Room instantiation
@@ -333,7 +337,7 @@ FSTART = Room("Forest Start", "The beginning of your journey, where it all begin
                               "aching thought: 'Murder the giants.",
               'F1', 'F2', 'F3', 'F4', None, None, [Healthpotion()])
 F1 = Room("Forest Clearing", "There's a mutated rat you cannot fight yet here because the dev is lazy.", 'F14', 'F2',
-          'FSTART', 'F4')
+          'FSTART', 'F4', None, None, None, m_rat)
 F2 = Room("Forest Clearing", "There's a mutated rat you cannot fight yet here because the dev is lazy.", 'F1', 'F5',
           'F3', 'FSTART')
 F3 = Room("Forest Clearing", "There's a mutated rat you cannot fight yet here because the dev is lazy.", 'FSTART', 'F2',
@@ -459,6 +463,10 @@ print("-" * 20)
 
 # Controller
 while playing:
+
+    if player.current_location.enemies is not None:
+        fight(player.current_location.enemies)
+
     print(player.current_location.name)
     print("-" * 20)
     print(player.current_location.description)
