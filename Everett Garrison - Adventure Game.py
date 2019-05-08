@@ -336,7 +336,7 @@ FSTART = Room("Forest Start", "The beginning of your journey, where it all begin
                               "\nshine onto a pentagram that you are standing on. You have no memories except one "
                               "aching thought: 'Murder the giants.",
               'F1', 'F2', 'F3', 'F4', None, None, [Healthpotion()])
-F1 = Room("Forest Clearing", "There's a mutated rat you cannot fight yet here because the dev is lazy.", 'F14', 'F2',
+F1 = Room("Forest Clearing", "There's a mutated rat you can fight here because the dev isn't lazy.", 'F14', 'F2',
           'FSTART', 'F4', None, None, None, m_rat)
 F2 = Room("Forest Clearing", "There's a mutated rat you cannot fight yet here because the dev is lazy.", 'F1', 'F5',
           'F3', 'FSTART')

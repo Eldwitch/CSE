@@ -43,11 +43,38 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Everett Garrison - Adventure Game.py">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CSVNotes.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="328" column="34" selection-start-line="328" selection-start-column="34" selection-end-line="328" selection-end-column="34" />
+            <state relative-caret-position="357">
+              <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Everett Garrison - Sales Records.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="17" column="22" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Dictionary notes.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="380">
+              <caret line="70" lean-forward="true" selection-start-line="70" selection-end-line="70" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Sales Records.csv">
+          <provider selected="true" editor-type-id="LargeFileEditor">
+            <state>
+              <caret column="12" lean-forward="true" selection-start-column="12" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -101,8 +128,8 @@
         <option value="$PROJECT_DIR$/CSVNotes.py" />
         <option value="$PROJECT_DIR$/Everett Garrison - Credit Card Validator.py" />
         <option value="$PROJECT_DIR$/Everett Garrison - Validator.py" />
-        <option value="$PROJECT_DIR$/Everett Garrison - Sales Records.py" />
         <option value="$PROJECT_DIR$/Everett Garrison - Adventure Game.py" />
+        <option value="$PROJECT_DIR$/Everett Garrison - Sales Records.py" />
       </list>
     </option>
   </component>
@@ -117,6 +144,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -128,7 +156,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -155,7 +182,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.Everett Garrison - Adventure Game">
+  <component name="RunManager" selected="Python.Everett Garrison - Sales Records">
     <configuration name="CSVNotes" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="CSE" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -275,8 +302,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.Everett Garrison - Adventure Game" />
         <item itemvalue="Python.Everett Garrison - Sales Records" />
+        <item itemvalue="Python.Everett Garrison - Adventure Game" />
         <item itemvalue="Python.Everett Garrison - Validator" />
         <item itemvalue="Python.Everett Garrison - Credit Card Validator" />
         <item itemvalue="Python.CSVNotes" />
@@ -300,11 +327,12 @@
       <workItem from="1556917163284" duration="534000" />
       <workItem from="1557175347137" duration="2186000" />
       <workItem from="1557261630200" duration="5275000" />
+      <workItem from="1557348037258" duration="3173000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26685000" />
+    <option name="totallyTimeSpent" value="29858000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -317,13 +345,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Structure" order="0" sideWeight="0.502451" side_tool="true" weight="0.27121213" />
       <window_info id="Favorites" order="1" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="2" sideWeight="0.49754903" visible="true" weight="0.120469086" />
+      <window_info active="true" content_ui="combo" id="Project" order="2" sideWeight="0.49754903" visible="true" weight="0.12153518" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49924242" weight="0.3217768" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49924242" visible="true" weight="0.3217768" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3880435" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -371,11 +400,11 @@
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.csv" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/CSE$Everett_Garrison___Adventure_Game.coverage" NAME="Everett Garrison - Adventure Game Coverage Results" MODIFIED="1557269421743" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/CSE$Everett_Garrison___Adventure_Game.coverage" NAME="Everett Garrison - Adventure Game Coverage Results" MODIFIED="1557349112478" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/CSE$Everett_Garrison___Validator.coverage" NAME="Everett Garrison - Validator Coverage Results" MODIFIED="1557265008569" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/CSE$Everett_Garrison___Credit_Card_Validator.coverage" NAME="Everett Garrison - Credit Card Validator Coverage Results" MODIFIED="1556656559549" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/CSE$CSVNotes.coverage" NAME="CSVNotes Coverage Results" MODIFIED="1556654311218" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/CSE$Everett_Garrison___Sales_Records.coverage" NAME="Everett Garrison - Sales Records Coverage Results" MODIFIED="1557265357711" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/CSE$Everett_Garrison___Sales_Records.coverage" NAME="Everett Garrison - Sales Records Coverage Results" MODIFIED="1557350857701" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/notes/notes.py" />
@@ -430,13 +459,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="12" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Dictionary notes.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1377">
-          <caret line="81" column="4" selection-start-line="81" selection-start-column="4" selection-end-line="81" selection-end-column="19" />
         </state>
       </provider>
     </entry>
@@ -518,17 +540,22 @@
     <entry file="file://$PROJECT_DIR$/MyNewFile.csv">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Sales Records.csv">
-      <provider selected="true" editor-type-id="LargeFileEditor">
-        <state relative-caret-position="51">
-          <caret line="3" column="3" selection-start-line="3" selection-start-column="3" selection-end-line="3" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Everett Garrison - Validator.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="331">
           <caret line="34" column="36" lean-forward="true" selection-start-line="34" selection-start-column="36" selection-end-line="34" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BasicPythonNotes.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-408" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Everett Garrison - Adventure Game.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="338" column="65" selection-start-line="338" selection-start-column="65" selection-end-line="338" selection-end-column="65" />
         </state>
       </provider>
     </entry>
@@ -539,22 +566,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/BasicPythonNotes.py">
+    <entry file="file://$PROJECT_DIR$/Dictionary notes.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-408" />
+        <state relative-caret-position="380">
+          <caret line="70" lean-forward="true" selection-start-line="70" selection-end-line="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Sales Records.csv">
+      <provider selected="true" editor-type-id="LargeFileEditor">
+        <state>
+          <caret column="12" lean-forward="true" selection-start-column="12" selection-end-column="12" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Everett Garrison - Sales Records.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Everett Garrison - Adventure Game.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="328" column="34" selection-start-line="328" selection-start-column="34" selection-end-line="328" selection-end-column="34" />
+        <state relative-caret-position="289">
+          <caret line="17" column="22" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
         </state>
       </provider>
     </entry>
