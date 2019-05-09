@@ -263,7 +263,7 @@ class YouVars:
 class Player(object):
     def __init__(self, starting_location):
         self.current_location = starting_location
-        self.inventory = [Makeshiftsword(), Makeshiftarmor(), Cavekey(), Weapon("Sword", 10)]
+        self.inventory = [Makeshiftsword(), Makeshiftarmor(), Healthpotion()]
         self.level = 1
         self.exp = 0
 
@@ -293,10 +293,10 @@ class Player(object):
 
     def unequip(self, _item):
         if isinstance(_item, Weapon):
-            YouVars.weapon = fists
+            YouVars.weapon = None
             print("You put away your weapon.")
         elif isinstance(_item, Armor):
-            YouVars.armor = nude
+            YouVars.armor = None
             print("You take off your armor.")
 
     def use(self, _item):
@@ -317,6 +317,10 @@ class Player(object):
             player.current_location.items = []
 
     def view_inventory(self):
+        print("Your health is at %i/%i" % (YouVars.health, YouVars.max_health))
+        print("-" * 20)
+        print("You have %s equipped as your weapon and %s equipped as your armor." % (YouVars.weapon, YouVars.armor))
+        print("-" * 20)
         for _item in player.inventory:
             print("You have a(n) %s." % _item.name)
             print("-" * 20)
@@ -334,21 +338,21 @@ m_rat = Character("Mutated Rat", 3, Weapon("Claw", 2), Armor("Rat hide", 1))
 FSTART = Room("Forest Start", "The beginning of your journey, where it all begins. There's trees around you as far as"
                               "\nthe eye can see, and right above you the trees open up to allow a ray of sunshine to"
                               "\nshine onto a pentagram that you are standing on. You have no memories except one "
-                              "aching thought: 'Murder the giants.",
+                              "aching thought: 'Murder the giants.'",
               'F1', 'F2', 'F3', 'F4', None, None, [Healthpotion()])
-F1 = Room("Forest Clearing", "There's a mutated rat you can fight here because the dev isn't lazy.", 'F14', 'F2',
-          'FSTART', 'F4', None, None, None, m_rat)
+F1 = Room("Forest Clearing", "There's a mutated rat you can fight here because the dev isn't lazy anymore.", 'F14',
+          'F2', 'FSTART', 'F4', None, None, None, m_rat)
 F2 = Room("Forest Clearing", "There's a mutated rat you cannot fight yet here because the dev is lazy.", 'F1', 'F5',
-          'F3', 'FSTART')
+          'F3', 'FSTART', None, None, None, m_rat)
 F3 = Room("Forest Clearing", "There's a mutated rat you cannot fight yet here because the dev is lazy.", 'FSTART', 'F2',
-          'F7', 'F4')
+          'F7', 'F4', None, None, None, m_rat)
 F4 = Room("Forest Clearing", "There's a mutated rat you cannot fight yet here because the dev is lazy.", 'F1', 'FSTART',
-          'F3', 'F10')
+          'F3', 'F10', None, None, None, m_rat)
 F5 = Room("A calm forest clearing", "You look around and feel an odd sense of calm here, as if you're safe for now.",
           None, 'F6', None, 'F2')
 F6 = Room("A dead end.", "A giant, wide tree blocks your path forward. Luckily a giant stick lies on the ground that "
                          "looks just big \nenough for you to swing like a weapon. "
-                         "Unluckily, you cannot pick it up yet.", None, None, None, 'F5')
+                         "Unluckily, you cannot pick it up yet.", None, None, None, 'F5', None, None)
 F7 = Room("Forest clearing", "There's a mutated rat you cannot fight yet here because the dev is STILL too lazy.", 'F3',
           None, 'F8')
 F8 = Room("Mutated Rat Den",
@@ -490,6 +494,7 @@ while playing:
             player.move(next_room)
         except KeyError:
             print("You're unable to go this way, and now your nose hurts from running into an invisible wall.")
+            YouVars.health -= 1
             print("-" * 20)
     elif 'equip' in command.lower():
         item_to_equip = command[6:]
@@ -501,7 +506,7 @@ while playing:
                 raise AttributeError
             player.equip(item)
         except AttributeError:
-            print("You don't have one, you freaking nerd.")
+            print("You don't have one, you freaking fool.")
     elif 'use' in command.lower():
         item_to_use = command[4:]
 
@@ -521,7 +526,7 @@ while playing:
                 raise AttributeError
             player.unequip(item)
         except AttributeError:
-            print("You don't have one equipped, duh.")
+            print("You don't have one equipped, you illiterate fool.")
     elif 'pick up' in command.lower():
         item_to_take = command[7:]
 

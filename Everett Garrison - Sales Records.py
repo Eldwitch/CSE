@@ -21,12 +21,14 @@ asia_profit = 0
 central_america_profit = 0
 north_america_profit = 0
 
+
 with open("Sales Records.csv", 'r') as bigfile:
     reader = csv.reader(bigfile)
     for row in reader:
         region = row[0]
         item_type = row[2]
         total_profit = row[13]
+
         if item_type == 'Fruits':
             fruits_profit += float(total_profit)
         if item_type == 'Clothes':
