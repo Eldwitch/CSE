@@ -70,7 +70,7 @@ class Gold(Item):
 
 class Makeshiftsword(Weapon):
     def __init__(self):
-        super(Makeshiftsword, self).__init__("Makeshift sword", 5)
+        super(Makeshiftsword, self).__init__("Makeshift sword", 6)
 
     def equip(self):
         YouVars.weapon.append(self)
@@ -161,7 +161,7 @@ class Ironarmor(Armor):
 class Cultistbrew(Consumable):
     def __init__(self):
         super(Cultistbrew, self).__init__("Cultist's special brew. WARNING: will lower your max health.")
-        self.healthremoved = 50
+        self.healthremoved = 25
 
     def consume(self):
         YouVars.max_health = self.healthremoved
@@ -251,6 +251,7 @@ class Character(object):
 # Items
 fists = Weapon("Fists", 2)
 nude = Armor("Nothing", 1)
+stick = Weapon("Big stick", 4)
 
 
 class YouVars:
@@ -263,7 +264,7 @@ class YouVars:
 class Player(object):
     def __init__(self, starting_location):
         self.current_location = starting_location
-        self.inventory = [Makeshiftsword(), Makeshiftarmor(), Healthpotion()]
+        self.inventory = [Healthpotion()]
         self.level = 1
         self.exp = 0
 
@@ -331,7 +332,7 @@ player_c = Character("You", YouVars.health, YouVars.weapon, YouVars.armor)
 
 # Enemy
 m_rat = Character("Mutated Rat", 3, Weapon("Claw", 2), Armor("Rat hide", 1))
-
+fairy = Character("Faerie", 5, Weapon("Nails", 3), Armor("Faerie cloth", 2))
 
 # Room instantiation
 # Forest
@@ -339,7 +340,7 @@ FSTART = Room("Forest Start", "The beginning of your journey, where it all begin
                               "\nthe eye can see, and right above you the trees open up to allow a ray of sunshine to"
                               "\nshine onto a pentagram that you are standing on. You have no memories except one "
                               "aching thought: 'Murder the giants.'",
-              'F1', 'F2', 'F3', 'F4', None, None, [Healthpotion()])
+              'F1', 'F2', 'F3', 'F4', None, None, [Healthpotion(), Makeshiftarmor()])
 F1 = Room("Forest Clearing", "There's a mutated rat you can fight here because the dev isn't lazy anymore.", 'F14',
           'F2', 'FSTART', 'F4', None, None, None, m_rat)
 F2 = Room("Forest Clearing", "There's a mutated rat you cannot fight yet here because the dev is lazy.", 'F1', 'F5',
@@ -351,8 +352,8 @@ F4 = Room("Forest Clearing", "There's a mutated rat you cannot fight yet here be
 F5 = Room("A calm forest clearing", "You look around and feel an odd sense of calm here, as if you're safe for now.",
           None, 'F6', None, 'F2')
 F6 = Room("A dead end.", "A giant, wide tree blocks your path forward. Luckily a giant stick lies on the ground that "
-                         "looks just big \nenough for you to swing like a weapon. "
-                         "Unluckily, you cannot pick it up yet.", None, None, None, 'F5', None, None)
+                         "looks just big \nenough for you to swing like a weapon.", None, None, None, 'F5', None, None,
+          [Makeshiftsword()])
 F7 = Room("Forest clearing", "There's a mutated rat you cannot fight yet here because the dev is STILL too lazy.", 'F3',
           None, 'F8')
 F8 = Room("Mutated Rat Den",
