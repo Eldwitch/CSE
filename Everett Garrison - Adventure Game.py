@@ -70,7 +70,7 @@ class Gold(Item):
 
 class Makeshiftsword(Weapon):
     def __init__(self):
-        super(Makeshiftsword, self).__init__("Makeshift sword", 6)
+        super(Makeshiftsword, self).__init__("Makeshift sword", 5)
 
     def equip(self):
         YouVars.weapon.append(self)
@@ -79,7 +79,7 @@ class Makeshiftsword(Weapon):
 
 class Gianthand(Weapon):
     def __init__(self):
-        super(Gianthand, self).__init__("Giant's hand", 10)
+        super(Gianthand, self).__init__("Giant hand", 15)
 
     def equip(self):
         YouVars.weapon.append(self)
@@ -97,7 +97,7 @@ class Makeshiftarmor(Armor):
 
 class Giantskin(Armor):
     def __init__(self):
-        super(Giantskin, self).__init__("Giant's skin", 10)
+        super(Giantskin, self).__init__("Giant skin", 10)
 
     def equip(self):
         YouVars.armor.append(self)
@@ -106,7 +106,7 @@ class Giantskin(Armor):
 
 class Giantsheart(Consumable):
     def __init__(self):
-        super(Giantsheart, self).__init__("Giant's heart")
+        super(Giantsheart, self).__init__("giant heart")
         self.healthadded = 50
 
     def consume(self):
@@ -117,7 +117,7 @@ class Giantsheart(Consumable):
 
 class Healthpotion(Consumable):
     def __init__(self):
-        super(Healthpotion, self).__init__("Health potion")
+        super(Healthpotion, self).__init__("health potion")
         self.health_healed = 25
 
     def consume(self):
@@ -127,7 +127,7 @@ class Healthpotion(Consumable):
 
 class Cavekey(Consumable):
     def __init__(self):
-        super(Cavekey, self).__init__("Cave key")
+        super(Cavekey, self).__init__("cave key")
         self.level_change = 'CSTART'
 
     def consume(self):
@@ -142,7 +142,7 @@ class Cavekey(Consumable):
 
 class Ironsword(Weapon):
     def __init__(self):
-        super(Ironsword, self).__init__("Iron sword", 15)
+        super(Ironsword, self).__init__("Iron sword", 10)
 
     def equip(self):
         YouVars.weapon.append(self)
@@ -160,7 +160,7 @@ class Ironarmor(Armor):
 
 class Cultistbrew(Consumable):
     def __init__(self):
-        super(Cultistbrew, self).__init__("Cultist's special brew. WARNING: will lower your max health.")
+        super(Cultistbrew, self).__init__("cultist brew")
         self.healthremoved = 25
 
     def consume(self):
@@ -172,7 +172,7 @@ class Cultistbrew(Consumable):
 
 class Demonhorn(Weapon):
     def __init__(self):
-        super(Demonhorn, self).__init__("Demon's horn", 20)
+        super(Demonhorn, self).__init__("Demon horn", 20)
 
     def equip(self):
         YouVars.weapon.append(self)
@@ -184,7 +184,7 @@ class Demonhorn(Weapon):
 
 class Demonskin(Armor):
     def __init__(self):
-        super(Demonskin, self).__init__("Demon's skin", 20)
+        super(Demonskin, self).__init__("Demon skin", 20)
 
     def equip(self):
         YouVars.armor.append(self)
@@ -193,7 +193,7 @@ class Demonskin(Armor):
 
 class Demonheart(Consumable):
     def __init__(self):
-        super(Demonheart, self).__init__("Demon's heart")
+        super(Demonheart, self).__init__("demon heart")
         self.healthincrease = 50
 
     def consume(self):
@@ -204,7 +204,7 @@ class Demonheart(Consumable):
 
 class Dynamite(Consumable):
     def __init__(self):
-        super(Dynamite, self).__init__("Situational Dynamite")
+        super(Dynamite, self).__init__("situational dynamite")
         self.level_change = 'WIN_ROOM'
 
     def consume(self):
@@ -215,7 +215,7 @@ class Dynamite(Consumable):
 
 class Shovel(Consumable):
     def __init__(self):
-        super(Shovel, self).__init__("Shovel")
+        super(Shovel, self).__init__("shovel")
         self.level_change = 'PSTART'
 
     def consume(self):
@@ -333,6 +333,7 @@ player_c = Character("You", YouVars.health, YouVars.weapon, YouVars.armor)
 # Enemy
 m_rat = Character("Mutated Rat", 3, Weapon("Claw", 2), Armor("Rat hide", 1))
 fairy = Character("Faerie", 5, Weapon("Nails", 3), Armor("Faerie cloth", 2))
+mom_rat = Character("Momma Rat", 15, Weapon("Slime", 5), Armor("Big rat hide", 3))
 
 # Room instantiation
 # Forest
@@ -340,31 +341,29 @@ FSTART = Room("Forest Start", "The beginning of your journey, where it all begin
                               "\nthe eye can see, and right above you the trees open up to allow a ray of sunshine to"
                               "\nshine onto a pentagram that you are standing on. You have no memories except one "
                               "aching thought: 'Murder the giants.'",
-              'F1', 'F2', 'F3', 'F4', None, None, [Healthpotion(), Makeshiftarmor()])
-F1 = Room("Forest Clearing", "There's a mutated rat you can fight here because the dev isn't lazy anymore.", 'F14',
-          'F2', 'FSTART', 'F4', None, None, None, m_rat)
-F2 = Room("Forest Clearing", "There's a mutated rat you cannot fight yet here because the dev is lazy.", 'F1', 'F5',
-          'F3', 'FSTART', None, None, None, m_rat)
-F3 = Room("Forest Clearing", "There's a mutated rat you cannot fight yet here because the dev is lazy.", 'FSTART', 'F2',
-          'F7', 'F4', None, None, None, m_rat)
-F4 = Room("Forest Clearing", "There's a mutated rat you cannot fight yet here because the dev is lazy.", 'F1', 'FSTART',
-          'F3', 'F10', None, None, None, m_rat)
-F5 = Room("A calm forest clearing", "You look around and feel an odd sense of calm here, as if you're safe for now.",
-          None, 'F6', None, 'F2')
+              'F1', 'F2', 'F3', 'F4', None, None, [Healthpotion()])
+F1 = Room("Forest Clearing", "There was a mutated rat you fought here because the dev wasn't lazy anymore! There's "
+                             "paths in all directions.", 'F14', 'F2', 'FSTART', 'F4', None, None, None, m_rat)
+F2 = Room("Forest Clearing", "There's paths in all directions.", 'F1', 'F5', 'F3', 'FSTART', None, None, None, m_rat)
+F3 = Room("Forest Clearing", "There's paths in all directions", 'FSTART', 'F2', 'F7', 'F4', None, None, None, m_rat)
+F4 = Room("Forest Clearing", "There's paths in all directions.", 'F1', 'FSTART', 'F3', 'F10', None, None, None, m_rat)
+F5 = Room("A calm forest clearing", "You look around and feel an odd sense of calm here, as if you're safe for now. "
+                                    "There's paths to the East and West.", None, 'F6', None, 'F2', None, None,
+          [Healthpotion()])
 F6 = Room("A dead end.", "A giant, wide tree blocks your path forward. Luckily a giant stick lies on the ground that "
-                         "looks just big \nenough for you to swing like a weapon.", None, None, None, 'F5', None, None,
-          [Makeshiftsword()])
-F7 = Room("Forest clearing", "There's a mutated rat you cannot fight yet here because the dev is STILL too lazy.", 'F3',
-          None, 'F8')
+                         "looks just big \nenough for you to swing like a weapon. You can exit to the West.", None,
+          None, None, 'F5', None, None, [Makeshiftsword()])
+F7 = Room("Forest clearing", "There's paths to the North and to the South.", 'F3', None, 'F8', None, None, None,
+          None, m_rat)
 F8 = Room("Mutated Rat Den",
-          "A disgustingly polluted rat den, filled with multiple dead rats and barely alive rat babies."
-          "\n In the center of the room there's a giant, bulging rat blob spewing more pollution and"
-          "\ndying rat babies. You feel a strong urge to purge this beast from this world. Sadly, the"
-          "\nfight system isn't implemented yet, so you are forced to move along in utter disgust.", 'F7', None, 'F9')
+          "A disgustingly polluted rat den, filled with multiple dead rats."
+          "\n In the center of the room there was a giant, bulging rat blob spewing more pollution and"
+          "\ndying rat babies. You felt a strong urge to purge this beast from this world, and so you did. You may now "
+          "exit either to the North or the South", 'F7', None, 'F9', None, None, None, None, mom_rat)
 F9 = Room("Dead End #2: Electric Boogaloo",
           "It's yet another dead end, or your first depending on what path you've taken now. You notice" 
           "\nsome weird armor of questionable origin, which is covered in the polluted goop the rat den" 
-          "\n behind you continuously spews out.", 'F8')
+          "\n behind you continuously spews out.", 'F8', None, None, None, None, None, [Makeshiftarmor()])
 F10 = Room("Faerie forest clearing entrance", "There's an ominous entrance to a more mystical, wondrous part of the"
                                               "\nforest, some tiny voices beckon you inward.", None, 'F4', None, 'F11')
 F11 = Room("Faerie forest clearing", "There's a Faerie you cannot fight yet here because the dev is lazy.", 'F12',
@@ -377,7 +376,7 @@ F13 = Room("Faerie forest clearing",
 FS = Room("Faerie sword clearing", "After murdering several faeries you walk into an uncharacteristicly calm clearing "
                                    "\nwith a sword that's been forced into a large rock slab in the middle of the "
                                    "\nclearing. A light beam shine brightly upon the blade, making it shine in the "
-                                   "\nlight of its own glory.", 'F13')
+                                   "\nlight of its own glory.", 'F13', None, None, None, None, None, [Ironsword()])
 F14 = Room("A calm forest crossroads",
            "You look around and feel an odd sense of calm here, as if you're safe for now. A signpost in the middle of "
            "\nthe road points in the four cardinal directions, with labels for each."
@@ -527,7 +526,7 @@ while playing:
                 raise AttributeError
             player.unequip(item)
         except AttributeError:
-            print("You don't have one equipped, you illiterate fool.")
+            print("You don't have one equipped in the first place, you illiterate fool.")
     elif 'pick up' in command.lower():
         item_to_take = command[7:]
 
