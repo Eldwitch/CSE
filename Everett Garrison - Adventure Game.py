@@ -8,7 +8,6 @@ def fight(target):
         lcommand = input("What do you want to do? ")
 
         if "attack" in lcommand.lower():
-            print(player_c.weapon)
             player_c.attack(target)
             target.attack(player_c)
 
@@ -365,7 +364,8 @@ F9 = Room("Dead End #2: Electric Boogaloo",
           "\nsome weird armor of questionable origin, which is covered in the polluted goop the rat den" 
           "\n behind you continuously spews out.", 'F8', None, None, None, None, None, [Makeshiftarmor()])
 F10 = Room("Faerie forest clearing entrance", "There's an ominous entrance to a more mystical, wondrous part of the"
-                                              "\nforest, some tiny voices beckon you inward.", None, 'F4', None, 'F11')
+                                              "\nforest, some tiny voices beckon you inward. There's paths to the East "
+                                              "and the West.", None, 'F4', None, 'F11')
 F11 = Room("Faerie forest clearing", "There's a Faerie you cannot fight yet here because the dev is lazy.", 'F12',
            'F10')
 F12 = Room("Faerie forest clearing",
