@@ -46,8 +46,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Everett Garrison - Adventure Game.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="773">
-              <caret line="542" lean-forward="true" selection-start-line="542" selection-end-line="542" />
+            <state relative-caret-position="544">
+              <caret line="391" column="113" selection-start-line="391" selection-start-column="113" selection-end-line="391" selection-end-column="113" />
             </state>
           </provider>
         </entry>
@@ -106,7 +106,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="974" />
@@ -306,11 +306,12 @@
       <workItem from="1557866488024" duration="3358000" />
       <workItem from="1557952977693" duration="1267000" />
       <workItem from="1558039182105" duration="1696000" />
+      <workItem from="1558126829698" duration="2490000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42822000" />
+    <option name="totallyTimeSpent" value="45312000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -322,7 +323,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Structure" order="0" sideWeight="0.502451" side_tool="true" weight="0.27121213" />
@@ -598,11 +599,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Sales Records.csv">
-      <provider editor-type-id="LargeFileEditor">
-        <state relative-caret-position="238">
-          <caret line="14" column="83" selection-start-line="14" selection-start-column="83" selection-end-line="14" selection-end-column="83" />
-        </state>
-      </provider>
       <provider selected="true" editor-type-id="csv-data-editor">
         <state>
           <format>
@@ -619,6 +615,11 @@
           </format>
         </state>
       </provider>
+      <provider editor-type-id="LargeFileEditor">
+        <state relative-caret-position="238">
+          <caret line="14" column="83" selection-start-line="14" selection-start-column="83" selection-end-line="14" selection-end-column="83" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/CSVNotes.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -629,8 +630,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Everett Garrison - Adventure Game.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="773">
-          <caret line="542" lean-forward="true" selection-start-line="542" selection-end-line="542" />
+        <state relative-caret-position="544">
+          <caret line="391" column="113" selection-start-line="391" selection-start-column="113" selection-end-line="391" selection-end-column="113" />
         </state>
       </provider>
     </entry>

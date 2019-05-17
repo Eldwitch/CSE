@@ -92,6 +92,8 @@ class Makeshiftarmor(Armor):
     def equip(self):
         YouVars.armor.append(self)
         print("You put on the Makeshift armor.")
+        F9.description = "It's yet another dead end, or your first depending on what path you've taken now. " \
+                         "You can exit to the North."
 
 
 class Giantskin(Armor):
@@ -146,6 +148,8 @@ class Ironsword(Weapon):
     def equip(self):
         YouVars.weapon.append(self)
         print("You equip the Iron sword.")
+        FS.description = "A strangely calm clearing with a cracked rock slab in the middle of it. " \
+                         "\nYou are able to exit to the North."
 
 
 class Ironarmor(Armor):
@@ -362,21 +366,22 @@ F8 = Room("Mutated Rat Den",
 F9 = Room("Dead End #2: Electric Boogaloo",
           "It's yet another dead end, or your first depending on what path you've taken now. You notice" 
           "\nsome weird armor of questionable origin, which is covered in the polluted goop the rat den" 
-          "\n behind you continuously spews out.", 'F8', None, None, None, None, None, [Makeshiftarmor()])
+          "\n behind you continuously spews out. You can exit to the North.", 'F8', None, None, None, None, None,
+          [Makeshiftarmor()])
 F10 = Room("Faerie forest clearing entrance", "There's an ominous entrance to a more mystical, wondrous part of the"
                                               "\nforest, some tiny voices beckon you inward. There's paths to the East "
                                               "and the West.", None, 'F4', None, 'F11')
-F11 = Room("Faerie forest clearing", "There's a Faerie you cannot fight yet here because the dev is lazy.", 'F12',
-           'F10')
-F12 = Room("Faerie forest clearing",
-           "There's another Faerie you cannot fight yet here because the dev is still too lazy.", None, 'F13', 'F11')
-F13 = Room("Faerie forest clearing",
-           "There's another Faerie you cannot fight yet here because the dev is still too lazy.", None, None, 'FS',
-           'F12')
+F11 = Room("Faerie forest clearing", "You can go deeper North into the faerie forest or you can exit it to the East.",
+           'F12', 'F10', None, None, None, None, None, fairy)
+F12 = Room("Faerie forest clearing", "You can go deeper East into the forest or turn back and head South.", None,
+           'F13', 'F11', None, None, None, None, fairy)
+F13 = Room("Faerie forest clearing", "You can go deeper South into the forest or turn back and start to leave West.",
+           None, None, 'FS', 'F12', None, None, None, fairy)
 FS = Room("Faerie sword clearing", "After murdering several faeries you walk into an uncharacteristicly calm clearing "
-                                   "\nwith a sword that's been forced into a large rock slab in the middle of the "
-                                   "\nclearing. A light beam shine brightly upon the blade, making it shine in the "
-                                   "\nlight of its own glory.", 'F13', None, None, None, None, None, [Ironsword()])
+                                   "\nwith a sword that's been forced into a large rock slab in the middle of it. "
+                                   "\nA beam of light shines brightly upon the blade, making it shine in the "
+                                   "\nlight of its own glory. You can exit to the North.", 'F13', None, None, None,
+          None, None, [Ironsword()])
 F14 = Room("A calm forest crossroads",
            "You look around and feel an odd sense of calm here, as if you're safe for now. A signpost in the middle of "
            "\nthe road points in the four cardinal directions, with labels for each."
@@ -384,9 +389,9 @@ F14 = Room("A calm forest crossroads",
            "\nEast: Strange Faerie Man Wannabe's Home and shop, and Piggy Fountain,"
            "\nSouth: Forest clearing,"
            "\nWest: Locked up Cultist's cave.", 'F17', 'F15', 'F1', None)
-F15 = Room("Faerie Man's Home (Outside)", "The outside of the weird Faerie wannabe man's home. It smells of cottage "
-                                          "cheese and loneliness. His home also doubles as a small shop.", None, 'F16',
-           None, 'F14')
+F15 = Room("Faerie Man's Home (Outside)", "The outside of the weird Faerie wannabe man's home. It smells of cream "
+                                          "cheese and loneliness. His home also doubles as a small shop, which he has "
+                                          "left unattended.", None, 'F16', None, 'F14')
 F16 = Room("Piggy Fountain", "There's a nice sense of calm here as you look at a large fountain ordained with a pig"
                              " spitting a stream of water into a round basin. \nAt the bottom of the basin you can see"
                              " something small glittering in the light.", None, None, None, 'F15')
