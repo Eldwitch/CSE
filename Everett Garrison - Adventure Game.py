@@ -61,12 +61,6 @@ class Consumable(Item):
         print("You use the item.")
 
 
-class Gold(Item):
-    def __init__(self):
-        super(Gold, self).__init__("Gold")
-        self.gold_amount = 0
-
-
 class Makeshiftsword(Weapon):
     def __init__(self):
         super(Makeshiftsword, self).__init__("Makeshift sword", 5)
@@ -228,6 +222,27 @@ class Shovel(Consumable):
               "large pit is revealed underneath it.")
 
 
+class Pigheal(Consumable):
+    def __init__(self):
+        super(Pigheal, self).__init__("piggy potion")
+
+    def consume(self):
+        YouVars.health = YouVars.max_health
+        print("You down the bottled Piggy Fountain water. You feel any wounds or damage taken you had mend together and"
+              " heal themselves. Health fully restored!")
+
+
+class Disappointment(Consumable):
+    def __init__(self):
+        super(Disappointment, self).__init__("Scrap metal")
+
+    def consume(self):
+        print("You use the sc- Wait a minute, this isn't scrap metal, these are stickers."
+              "\n The disappointment you feel as you realize that you were cheated out of a crafting system physically "
+              "hurts you. You lose 1 HP.")
+        YouVars.health -= 1
+
+
 class Character(object):
     def __init__(self, name, health, weapon, armor):
         self.name = name
@@ -267,7 +282,7 @@ class YouVars:
 class Player(object):
     def __init__(self, starting_location):
         self.current_location = starting_location
-        self.inventory = [Healthpotion()]
+        self.inventory = []
         self.level = 1
         self.exp = 0
 
@@ -336,14 +351,19 @@ player_c = Character("You", YouVars.health, YouVars.weapon, YouVars.armor)
 # Enemy
 m_rat = Character("Mutated Rat", 3, Weapon("Claw", 2), Armor("Rat hide", 1))
 fairy = Character("Faerie", 5, Weapon("Nails", 3), Armor("Faerie cloth", 2))
-mom_rat = Character("Momma Rat", 15, Weapon("Slime", 5), Armor("Big rat hide", 3))
+mom_rat = Character("Momma Rat", 15, Weapon("Slime", 5), Armor("Big rat hide", 5))
+baby_giant = Character("Baby Giant", 20, Weapon("Hand", 7), Armor("Skin", 10))
+child_giant = Character("Child Giant", 22, Weapon("Hand", 8), Armor("Skin", 11))
+teen_giant = Character("Teenager Giant", 24, Weapon("Hand", 9), Armor("Skin", 12))
+adult_giant = Character("Adult Giant", 26, Weapon("Hand", 10), Armor("Skin", 13))
+elder_giant = Character("Elder Giant", 30, Weapon("Hand", 12), Armor("Skin", 14))
 
 # Room instantiation
 # Forest
-FSTART = Room("Forest Start", "The beginning of your journey, where it all begins. There's trees around you as far as"
-                              "\nthe eye can see, and right above you the trees open up to allow a ray of sunshine to"
-                              "\nshine onto a pentagram that you are standing on. You have no memories except one "
-                              "aching thought: 'Murder the giants.'",
+FSTART = Room("Forest Start",
+              "The beginning of your journey, where it all begins. There's trees around you as far as the eye can see, "
+              "and right above you the trees open up to allow a ray of sunshine to shine onto a pentagram that you are "
+              "standing on. You have no thoughts, no memories except for one aching command: 'Murder the giants.'",
               'F1', 'F2', 'F3', 'F4', None, None, [Healthpotion()])
 F1 = Room("Forest Clearing", "There was a mutated rat you fought here because the dev wasn't lazy anymore! There's "
                              "paths in all directions.", 'F14', 'F2', 'FSTART', 'F4', None, None, None, m_rat)
@@ -391,7 +411,8 @@ F14 = Room("A calm forest crossroads",
            "\nWest: Locked up Cultist's cave.", 'F17', 'F15', 'F1', None)
 F15 = Room("Faerie Man's Home (Outside)", "The outside of the weird Faerie wannabe man's home. It smells of cream "
                                           "cheese and loneliness. His home also doubles as a small shop, which he has "
-                                          "left unattended.", None, 'F16', None, 'F14')
+                                          "left unattended. You can go East and South.", None, 'F16', None, 'F14', None,
+           None, [Healthpotion()])
 F16 = Room("Piggy Fountain", "There's a nice sense of calm here as you look at a large fountain ordained with a pig"
                              " spitting a stream of water into a round basin. \nAt the bottom of the basin you can see"
                              " something small glittering in the light.", None, None, None, 'F15')
@@ -402,25 +423,32 @@ F17 = Room("Another Crossroads", "You walk into another crossroads, and a simila
                                  "\nSouth: The Other Crossroads"
                                  "\nWest: Another dead end'.", None, 'TSTART', 'F14', 'F18')
 F18 = Room("Dead End, Again", "Another dead end with some pieces of scrap metal strewn about on the ground "
-                              "haphazardly.", None, 'F17')
+                              "haphazardly that you can't pick up, as it is simply painted onto the ground. You "
+                              "can return to the crossroads by heading East.", None, 'F17', None, None, None, None,
+           [Disappointment()])
 # Forest Tower
-TSTART = Room("The First Floor of a Very Tall Tower", "A Baby Giant slumbers on the floor. You are unable to wake it up"
-                                                      "\nor fight it yet because those systems are not in place yet.",
-              None, None, None, None, 'T1', 'TB')
+TSTART = Room("The First Floor of a Very Tall Tower", "A Baby Giant slumbers eternally here.",
+              None, None, None, None, 'T1', 'TB', None, baby_giant)
 TB = Room("The Tower Basement", "You can barely see in front of yourself because of how dark it is in here.", None,
           None, None, None, 'TSTART')
-T1 = Room("The second floor of the Very Tall Tower", "A Child Giant slumbers here.", None, None, None, None, 'T2', 'T1')
-T2 = Room("The third floor of the Very Tall Tower", "A Teenage Giant slumbers here.", None, None, None, None, 'T3',
-          'T1')
-T3 = Room("The fourth floor of the Very Tall Tower", "An Adult Giant slumbers here.", None, None, None, None, 'T4',
-          'T2')
-T4 = Room("The roof of the Very Tall Tower", "The Last Giant slumbers here, waking and killing it would make "
-                                             "the entire race extinct forever.",
-          None, None, None, None, None, 'T3')
+T1 = Room("The second floor of the Very Tall Tower", "A Child Giant slumbers here eternally.", None, None, None, None,
+          'T2', 'T1', None, child_giant)
+T2 = Room("The third floor of the Very Tall Tower", "A Teenage Giant slumbers here eternally.", None, None, None, None,
+          'T3', 'T1', None, teen_giant)
+T3 = Room("The fourth floor of the Very Tall Tower", "An Adult Giant sleeps here eternally.", None, None, None, None,
+          'T4', 'T2', None, adult_giant)
+T4 = Room("The roof of the Very Tall Tower",
+          "As they breath their final breath, The Last Giant says to you: \"Please, demon... Avenge my race."
+          "Take this key and murder the cultists that summoned you to cull the last of our people, please...\""
+          "You take your sword and plunge it into him a final time."
+          "\nAs the life leaves his eyes you pick up the key and turn it in your hand as you think about what he said, "
+          "his words echoing through your mind.",
+          None, None, None, None, None, 'T3', [Gianthand(), Giantsheart(), Giantskin(), Cavekey()], elder_giant)
 # Ominous Cave
-CSTART = Room("Ominous cave entrance", "The entrance to a damp, smelly cave. You hear chants in the distance and see "
-                                       "what appears to be a small shop ahead of you, past a very tall ladder \nthat "
-                                       "reaches far into the cave's y axis.", None, 'F14', None, 'F1')
+CSTART = Room("Ominous cave entrance",
+              "The entrance to a damp, smelly cave. You hear chants in the distance and see what appears to be a small "
+              "shop ahead of you, past a very tall ladder that reaches far into the cave's y axis.", None, 'F14',
+              None, 'C1')
 C1 = Room("The bottom of a large ladder", "You stare up the large ladder and hear the chanting faintly, the rungs "
                                           "beckoning you to grasp and climb them.", None, 'CSTART', None, 'CSHOP',
           'C2')
@@ -471,7 +499,7 @@ print("NOTE: You cannot use items or fight any enemies yet, sorry.")
 print("-" * 20)
 
 # Controller
-while playing:
+while playing and YouVars.health > 0:
 
     if player.current_location.enemies is not None:
         fight(player.current_location.enemies)
