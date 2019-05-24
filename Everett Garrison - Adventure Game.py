@@ -563,6 +563,15 @@ while playing and YouVars.health > 0:
     elif 'pick up' in command.lower():
         item_to_take = command[7:]
 
+    elif 'help' in command.lower():
+        print("You can say 'pick up' to pick up all items in a room."
+              "\n When in a battle the only option is to say 'attack' if you do anything else you will be damaged."
+              "\n You can press enter or type in 'i' to view your inventory."
+              "\n You can type in 'use' to use consumables in your inventory, but make sure to capitalize them "
+              "properly!"
+              "\n You can also type in 'equip' to equip any weapons or armor you have in your inventory!"
+              "\n The Ominous Cave is unfinished, but I hope you enjoy it anyways!")
+
         try:
             if len(player.current_location.items) < 0:
                 raise AttributeError
